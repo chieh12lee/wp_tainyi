@@ -1,0 +1,13 @@
+<div class="necker-nav flex w-full ">
+	{% for item in rows %}
+		<a class="item" href="{{item.link}}">
+			<div class="innner">
+				<div class="text-center">
+					<img class="item-icon inline-block" src="{{item.icon }}" alt="{{item.name}}">
+				</div>
+				<span class="text block w-full">{{item.name}}</span>
+			</div>
+			<img class="hover-effect" src="{{'images/necker-nav-line.svg' | assets}}" alt="line">
+		</a>
+	{% endfor %}
+</div>

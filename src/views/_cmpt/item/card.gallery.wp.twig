@@ -1,0 +1,15 @@
+{# fields :[  img, title , price , excerpt ] #}
+
+<div class="card --{{mode}} {{cls}}  {{row.post_type}}">
+	{% if 'thumbnail' in fields and row.thumbnail != '' %}
+		<a class="card-img gee" href="{{row.link}}" data-ta=".product-preview" data-gene="click:preview.toggle" data-endpoint="/product/{{row.id}}">
+			{% set size = 'medium' %}
+			{% if lazy == true %}
+				<img class="lazy" height="400" data-src="{{row.thumbnail.src(size)}}" alt="{{row.title}}">
+			{% else %}
+				<img src="{{row.thumbnail.src(size)}}" alt="{{row.title}}">
+			{% endif %}
+		</a>
+	{% endif %}
+
+</div>

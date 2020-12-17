@@ -1,0 +1,90 @@
+@tailwind base;
+
+@layer base {
+	:root {
+		--color-primary: #008F85;
+		--color-secondary: #1f4b9f;
+		--color-white: #fff;
+		--color-black: #000;
+		--color-green: #98c399;
+		--color-red: #e86565;
+		--color-yellow: #f3c859;
+		// --color-lightest: #efefef;
+		--color-lightest: #f9fafc;
+		--color-lighter: #ccc;
+		--color-light: #666;
+		--color-dark: #333;
+		--color-darker: #111;
+		--color-info: #00cc0a;
+		--color-danger: #e00000;
+		--color-warn: #df4400;
+		--color-success: #2b6cb0;
+		--color-transparent: transparent;
+
+		--color-label: #666;
+		--color-input-border: #666;
+		--color-input-text: #666;
+	}
+
+	/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+	/* @import url('https://fonts.googleapis.com/css?family=Lato&display=swap'); */
+
+	/* @responsive {
+		.none {
+			display: none !important;
+		}
+	}
+
+	@responsive {
+		.inline-block {
+			display: inline-block !important;
+		}
+	}
+
+	@responsive {
+		.block {
+			display: block !important;
+		}
+	}
+
+	@responsive {
+		.flex {
+			display: flex !important;
+		}
+	} */
+
+	@responsive {
+		.clearfix:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+	@responsive {
+		.text-shadow-white {
+			text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+			// text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+		.text-shadow {
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+			// text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.text-shadow-md {
+			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+		}
+
+		.text-shadow-lg {
+			text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11),
+				0 5px 15px rgba(0, 0, 0, 0.08);
+		}
+
+		.text-shadow-none {
+			text-shadow: none;
+		}
+	}
+}
+
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;

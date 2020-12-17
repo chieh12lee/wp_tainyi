@@ -1,0 +1,12 @@
+<section class="sectionBtn">
+
+	<div class="pic" style="background-image:url({{ item.banner}})"></div>
+	<div class="sb-conatiner flex flex-col justify-center">
+		<div class="section-title text-white">{{item.title}}</div>
+		{% include "@cmpt/fudiBtn/fudiBtn.twig" with { item: {
+      color: item.color,
+      txt: 'MORE',
+      link: item.link, 
+    }}%}
+	</div>
+</section>

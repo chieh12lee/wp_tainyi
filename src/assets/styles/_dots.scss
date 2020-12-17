@@ -1,0 +1,51 @@
+.owl-dots {
+	> button.owl-dot {
+		outline: none;
+		position: relative;
+		width: 16px;
+		height: 16px;
+
+		~ .owl-dot {
+			margin-left: 1.6rem;
+		}
+
+		&::after {
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			width: 80%;
+			height: 80%;
+			border-radius: 50%;
+			opacity: 0.1;
+			transition: 0.5s all;
+			content: "";
+		}
+
+		> span {
+			position: relative;
+			display: block;
+			margin: 5px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			opacity: 0.2;
+			transition: 1s all;
+		}
+
+		&.active {
+			> span {
+				opacity: 1;
+			}
+
+			&::after {
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
+				opacity: 0.3;
+				content: "";
+			}
+		}
+	}
+	// display: none;
+}

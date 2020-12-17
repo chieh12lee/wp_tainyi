@@ -1,0 +1,65 @@
+{
+    "vendor": {
+        "themes/tbs": "1.0"
+    },
+    "admin-config": {
+        "domo-theme-options": {
+            "pages": {
+                "admin.php": "page=options"
+            },
+            "forms": {
+                "option_": {
+                    "fields": {
+                        "option_address": {
+                            "jquery": "#option_address"
+                        }
+                    }
+                }
+            }
+        },
+        "domo-partner-post": {
+            "pages": {
+                "post.php": "",
+                "post-new.php": ""
+            },
+            "post_type": "partner",
+            "forms": {
+                "post": {
+                    "fields": {
+                        "addr": {
+                            "jquery": "#addr"
+                        },
+                        "leading": {
+                            "jquery": "#leading"
+                        },
+                        "boss_name": {
+                            "jquery": "#boss_name"
+                        },
+                        "boss_job": {
+                            "jquery": "#boss_job"
+                        },
+                        "boss_excerpt": {
+                            "jquery": "#boss_excerpt"
+                        }
+                    }
+                }
+            }
+        },
+        "domo-page-history": {
+            "pages": {
+                "post.php": "",
+                "post-new.php": ""
+            },
+            "post_type": "page",
+            "forms": {
+                "post": {
+                    "fields": {
+                        "_page_history_group_0_excerpt": {
+                            "jquery": ".cmb2_textarea"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{# PAGINATION LIST #}
+
+<ul class="pagination flex items-center space-x-5 justify-center">
+	{% if row.prev is defined %}
+		<li class="page-item">
+			<a class="page-link block" href="{{row.prev.link}}">
+				<img src="{{'images/arrLeft.png'|assets}}" alt="">
+			</a>
+		</li>
+	{% endif %}
+
+	{% for page in row.pages %}
+		{% if page.link %}
+			<li class="page-item">
+				<a href="{{ page.link }}" class="{{ page.class }} pagination-link" aria-label="Goto page {{ page.title }}">{{ page.title }}</a>
+			</li>
+		{% else %}
+
+			{% if page.class == 'dots' %}
+				<li class="page-item">
+					<span class="ellipsis">&hellip;</span>
+				</li>
+			{% else %}
+				<li class="page-item underline">
+					<a class="page-link" href="{{ page.link }}">{{ page.title }}</a>
+				</li>
+			{% endif %}
+		{% endif %}
+
+	{% endfor %}
+
+
+	{# NEXT BUTTON #}
+	{% if row.next is defined %}
+		<li class="page-item">
+			<a class="page-link block" href="{{row.next.link}}">
+				<img src="{{'images/arrRight.png'|assets}}" alt="">
+			</a>
+		</li>
+	{% endif %}
+</ul>

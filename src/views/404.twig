@@ -1,0 +1,11 @@
+{% extends "@layout/base.twig" %}
+
+{% block bodier %}
+<div class="container container-sm pt-20 pb-64">
+  <h1 class="title text-3xl font-black font-heading">
+    {{ messages.404.title }}
+  </h1>
+
+  <p>{{ messages.404.body }} <a href="{{ site.link }}">{{ messages.404.link_text }}</a>.</p>
+</div>
+{% endblock %}

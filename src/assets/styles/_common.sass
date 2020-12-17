@@ -1,0 +1,216 @@
+html
+	font-size: 110%
+	
+.neck-ratio
+	+pc
+		+ratio(1024,385)
+	+phone 
+		+ratio(16,9)
+
+.coverBg
+	+coverBg
+
+.container
+	max-width: 1025px
+	padding-left: 25px
+	padding-right: 25px
+	&.wider
+		max-width: 1440px
+		padding-left: 0
+		padding-right: 0
+
+.picTxtContainer
+	.picTxtWrap:nth-child(2n)
+		+pc
+			flex-direction: row-reverse
+	
+.picTxtWrap
+	display: flex
+	+phone 
+		flex-direction: column
+	.pic
+		+coverBg
+		width: 50%
+		+phone 
+			width: 100%
+
+		img 
+			width: 100%
+	.txt 
+		width: 50%
+		display: flex
+		align-items: center
+		+phone 
+			width: 100%
+
+		@apply p-8
+		.content
+			width: 100%
+			.subTitle
+				@apply font-bold text-2xl 
+			p
+				@apply py-2
+
+
+
+.picTxtWrap2
+	display: flex
+	.pic	
+		flex-grow: 0
+		flex-shrink: 0
+	.txt
+		flex-grow: 1
+			
+	
+.s-title
+	@apply text-5xl font-bold relative text-primary
+
+
+
+
+.slider
+	.slick-dots
+		bottom: 10px
+.slick-slide
+	outline: none
+
+.clientSlider
+	.slick-slide 
+		margin: 0 20px
+		.roundBg
+			@apply border rounded-full absolute inset-0 border-lighter
+	.slick-list
+		padding-top: 50px!important
+		padding-bottom: 50px!important
+
+.t-btn
+	border: 1px solid #000
+	padding: 5px 30px
+	display: inline-block
+	+dTime
+	&:hover
+		background-color: var(--color-primary)
+		border: 1px solid var(--color-primary)
+		color: white
+
+
+
+.lineBox
+	.lineBoxItem
+		display: flex
+		.numWrap
+			display: flex
+			align-items: center
+			border-right: 1px dashed #000
+			width: 60px
+			justify-content: space-between
+			margin-right: 40px
+			flex-shrink: 0
+			.circle
+				width: 20px
+				height: 20px
+				position: relative
+				z-index: 2
+				@apply rounded-full border bg-white
+				transform: translate(50%, 0%)
+		.textWrap
+			@apply py-2
+			flex-grow: 1
+			.content
+				border: 1px solid #000
+				@apply py-3 px-8
+				display: flex
+				align-items: center
+				justify-content: space-between
+				.subTitle
+					@apply px-4 mx-4 text-2xl w-1/5 font-bold
+				.innerContent
+					@apply w-3/5
+				ul 
+					column-count: 2
+					column-gap: 4rem	
+					padding-left: 1em
+						
+
+		&:first-child
+			.numWrap
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					right: -1px
+					height: 50%
+					width: 1px
+					background-color: white
+		&:last-child
+			.numWrap
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					bottom: 0
+					right: -1px
+					height: 50%
+					width: 1px
+					background-color: white
+
+
+.hasTBtn
+	&:hover
+		.t-btn
+			background-color: var(--color-primary)
+			border: 1px solid var(--color-primary)
+			color: white
+
+.clothWtap
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	.space
+		width: 150px
+		@apply mx-1 
+	.cloth-item
+		@apply mx-1 my-4
+		.pic	
+			width: 150px
+			+ratio(1,1)
+			position: relative
+			.cloth-img
+				@apply inset-0 opacity-0
+				+coverBg
+				+dTime
+		.txt
+			.pantone-txt
+
+			.name-txt
+				display: none
+
+		&:hover
+			.pic	
+				.cloth-img
+					@apply inset-0 opacity-100
+			.txt
+				.pantone-txt
+					display: none
+				.name-txt
+					display: block
+
+ul.dotList
+	
+	li 
+		position: relative
+		@apply pl-6 mb-4
+		&::after
+			content: ''
+			position: absolute
+			top: .1em
+			left: 0
+			width: 10px
+			height: 20px
+			@apply bg-primary
+
+
+.ratio-1-1
+	+ratio(1,1)
+

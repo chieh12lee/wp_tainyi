@@ -1,0 +1,11 @@
+.app-bar {
+	.menu {
+		.item {
+			~ .item {
+				&:before {
+					@apply bg-light;
+				}
+			}
+		}
+	}
+}

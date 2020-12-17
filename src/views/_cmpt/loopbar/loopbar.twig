@@ -1,0 +1,39 @@
+<div class="loopbar mb-6">
+	<form class="" method="get" accept-charset="UTF-8">
+		<div class="flex flex-wrap">
+			{% if 'terms'  in fields or 'keyword' in fields %}
+				<a class="btn btn-primary btn- px-2 py-1 gee lg:hidden" data-ta=".filter-drawer" data-gene="click:drawer.toggle" href="javascript:;">
+					<i class="icon icon-filter"></i>
+				</a>
+				<div class="filter-drawer  drawer md:drawer --bottom p-4 lg:p-0  ">
+					<div class="flex lg:flex-row flex-col">
+						{% if 'terms' in fields %}
+							<select class="select mb-4 lg:mb-0 lg:mr-2" name="loc">
+								<option value="">{{__('全部地區','domo')}}</option>
+								{% for row in loc %}
+									<option {% if row.active == true %} selected {% endif %} value="{{row.slug}}">{{row.name}}</option>
+								{% endfor %}
+							</select>
+							<select class="select mb-4 lg:mb-0 lg:mr-2" name="partner_category">
+								<option value="{{category_root_slug}}">{{__('全部分類','domo')}}</option>
+								{% for row in sub_category %}
+									<option {% if row.active == true %} selected {% endif %} value="{{row.slug}}">{{row.name}}</option>
+								{% endfor %}
+							</select>
+						{% endif %}
+						{% if 'keyword' in fields %}
+							<input class=" input mb-4 lg:mb-0 lg:mr-2" type="text" name="keyword" placeholder={{__('請輸入關鍵字','domo')}} "" value="{{keyword}}">
+						{% endif %}
+
+						<input class="btn btn-primary btn-sm rounded-md" type="submit" value="{{__('送出','domo')}}">
+					</div>
+				</div>
+			{% endif %}
+			{% if 'switcher' in fields  %}
+				<div class="ml-auto">
+					{% include "@cmpt/switcher/switcher.twig" with { card:switcher_ta} only %}
+				</div>
+			{% endif %}
+		</div>
+	</form>
+</div>

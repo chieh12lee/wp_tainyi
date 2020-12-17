@@ -1,0 +1,16 @@
+{% extends "@layout/base.twig" %}
+
+
+{% block necker %}
+	{% include "@partial/necker.twig" %}
+
+{% endblock %}
+{% block bodier %}
+	<div class="container container-sm">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<div class="wysiwyg md:wysiwyg">
+				{{ post.content }}
+			</div>
+		</article>
+	</div>
+{% endblock %}

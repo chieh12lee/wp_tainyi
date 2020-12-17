@@ -1,0 +1,12 @@
+<section class='bg-gray py-14'>
+	<div class="section-title text-center">CERTIFICATION</div>
+	<div class="mt-8 flex flex-wrap container justify-between px-16 space-y-4" style='max-width:1150px'>
+		{% for key,item in certification.items %}
+			{% set img =  Image(key) %}
+			<img src="{{ img.src }}" alt="{{ img.alt }}" class='w-2/5 mx-3 lg:w-auto'>
+		{% endfor %}
+		<div class="spacer" style='width:200px'></div>
+		<div class="spacer" style='width:200px'></div>
+		<div class="spacer" style='width:200px'></div>
+	</div>
+</section>

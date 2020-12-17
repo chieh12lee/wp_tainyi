@@ -1,0 +1,17 @@
+<div class="bar flex mt-8 flex-col lg:flex-row items-center">
+	<div class="terms">
+		{% for term  in row.terms %}
+			<a class="badge bg-primary mr-2 mb-2" href="{{term.link}}">
+				{{term.title}}
+			</a>
+		{% endfor %}
+	</div>
+	<div class="share mt-4 lg:mt-0 lg:pl-4 lg:ml-auto">
+		{% include '@core/cmpt/share/share.twig' with {
+			btn_cls:'btn btn-icon btn-outline ' ,
+			fields:['twitter','facebookf'],
+			link:row.link ,
+			title:row.title} 
+			%}
+	</div>
+</div>

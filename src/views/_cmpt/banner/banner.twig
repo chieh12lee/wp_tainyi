@@ -1,0 +1,20 @@
+<div class="banner relative">
+	<div class="bg z-0">
+		<picture>
+			{% if row.mobile and  row.mobile.src %}
+				<source class="" media="(max-width: 650px)" srcset="{{row.mobile}}">
+			{% endif %}
+			<img class="" src="{{row.thumbnail.src | assets}}" alt="{{row.thumbnail.alt}}">
+		</picture>
+	</div>
+	{% if row.title %}
+		<div class="para z-30 absolute top-0 left-0 lg:ml-20 lg:mt-20  mt-10 ml-4">
+			<h2 class="title font-heading font-bold text-black lg:text-5xl text-4xl  tracking-wider">{{row.title}}</h2>
+			{% if row.link %}
+				<a class="btn btn-primary mt-6" href="{{row.link}}" target="_blank">
+					查看更多
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>

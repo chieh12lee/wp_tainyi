@@ -1,0 +1,33 @@
+<div class="item relative">
+	<div class="bg z-0">
+		{% if lazy == true %}
+			{% set desktop = row.desktop ?  row.desktop : row.thumbnail.src   %}
+			<picture>
+				<source class="owl-lazy" media="(max-width: 650px)" data-srcset="{{row.mobile}}">
+				<img class="owl-lazy" data-src="{{desktop}} " alt="{{row.title|striptags }}">
+			</picture>
+
+		{% else %}
+			<img src="{{desktop}}" alt="{{row.title|striptags}}">
+		{% endif %}
+	</div>
+
+	<div class="container px-4 lg:px-0 absolute  w-full h-full flex items-start  lg:items-center justify-start ">
+		<div class="para z-30  py-10">
+			{% if 'subtitle' in fields %}
+				<p class="subtitle text-white text-2xl opacity-50">{{row.subtitle}}</p>
+			{% endif %}
+			{% if 'title' in fields %}
+				<h2 class="title text-shadow  font-heading font-black text-white lg:text-5xl text-4xl leading-tight">{{row.title}}</h2>
+
+			{% endif %}
+			{% if 'link' in fields and row.link2  %}
+				<div class="mt-8">
+					<a class=" btn btn-primary py-2 px-4 text-base lg:px-8 lg:py-4 " href="{{row.link2}}" target="{{row.target}}}">
+						了解更多
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

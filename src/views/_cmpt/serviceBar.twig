@@ -1,0 +1,13 @@
+<div class="flex font-bold space-x-3 lg:space-x-8 items-center justify-center">
+	{% for item in service_menu %}
+		<a class="txt {{item.class}} text-lineBtn font-bold lg:text-xl" href="{{item.link}}">{{item.title}}</a>
+
+		{% if loop.last != true %}
+			<img src="{{ 'images/arr.png' | assets }}" alt="" class=''>
+			{# <img src="http://fudi.domoidea.com/app/uploads/fudi/arrDown.png" alt="" class='phoneShow'> #}
+		{% endif %}
+
+
+	{% endfor %}
+
+</div>

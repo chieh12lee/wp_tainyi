@@ -1,0 +1,13 @@
+{# height screen auto fixed #}
+>
+<div class="carou loading gee --{{mode}} --{{animation}} --{{height}} {{cls}} {{color}}" data-autoheight="{{height != 'auto' ? false : true}}" data-autoplay="{{autoplay}}" data-lazy="{{lazy}}" data-nav="{{nav}}" data-dots="{{dots}}" data-gene="init:carou.init" data-item="1">
+	{% for row in rows %}
+		{% include _slot.src is defined ? _slot.src  : '@core/cmpt/carou/item.twig'  with { 
+            row :row ,
+            lazy:lazy,
+            fields:_slot.fields ,
+            mode:_slot.mode
+            } 
+        %}
+	{% endfor %}
+</div>

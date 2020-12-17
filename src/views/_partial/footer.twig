@@ -1,0 +1,46 @@
+<div class="bg-black py-10">
+	<div class="container text-white px-6 max-w-screen-lg">
+		<div class=" flex justify-between border-b border-light py-4 flex-wrap">
+			{% for item in footer_menu %}
+				<div class="">
+					<a href="{{item.link}}" class="text-lg font-bold py-2 block hover-yellow">{{item.title}}</a>
+					{% if item.get_children %}
+						<ul>
+							{% for child in item.get_children %}
+								<li>
+									<a href="{{child.link}}" class='py-2 block hover-yellow'>{{child.title}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="flex justify-between py-8 flex-col space-y-4 lg:space-y-0 lg:flex-row border-b border-light">
+			<div>
+				<img src='{{site.logo.normal}}' alt="Logo">
+			</div>
+			<div class="">
+
+				<p class='font-bold'>{{site.info.company_name}}</p>
+				<p>{{site.info.address}}</p>
+			</div>
+			<div class="">
+				<p class='font-bold'>CONTACT</p>
+				<p>
+					<a class='hover-yellow' href="mailto:{{site.info.email}}">{{site.info.business}}</a>
+				</p>
+				<p>Skype:
+					{{site.info.skype}}</p>
+				<p>t:
+					<a class='hover-yellow' href="tel:{{site.info.tel}}">{{site.info.tel}}</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="py-4 text-right text-gray">
+			<a href="/privacy-policy" class=" ">Privacy Policy</a>
+		</div>
+	</div>
+</div>

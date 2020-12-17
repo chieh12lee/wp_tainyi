@@ -1,0 +1,51 @@
+<div
+	class="share flex justify-center">
+	{# TUMBLR #}
+
+	{% if 'tumblr' in fields %}
+		<a class="{{btn_cls}}" target="_blank" title="tumblr" href="https://www.tumblr.com/share/link?url={{ link }}&name={{ title }}&description={{  excerpt }}">
+			<i class="bd bd-tumblr " aria-hidden="true"></i>
+			<span class="sr-only">分享到tumblr</span>
+		</a>
+	{% endif %}
+	{# FACEBOOK #}
+	{% if 'facebook' in fields  %}
+		<a class="{{btn_cls}}" target="_blank" title="Facebook" href="http://www.facebook.com/sharer.php?u={{ link }}">
+
+			<svg class='w-8 fill-current text-light' viewbox="0 0 22 22">
+				<path d="M19.6429 0H2.35714C1.73199 0 1.13244 0.248341 0.690391 0.690391C0.248341 1.13244 0 1.73199 0 2.35714L0 19.6429C0 20.268 0.248341 20.8676 0.690391 21.3096C1.13244 21.7517 1.73199 22 2.35714 22H9.0971V14.5205H6.00335V11H9.0971V8.31679C9.0971 5.26478 10.9141 3.57893 13.697 3.57893C15.0297 3.57893 16.4234 3.81661 16.4234 3.81661V6.81214H14.8878C13.3748 6.81214 12.9029 7.75107 12.9029 8.71406V11H16.2805L15.7403 14.5205H12.9029V22H19.6429C20.268 22 20.8676 21.7517 21.3096 21.3096C21.7517 20.8676 22 20.268 22 19.6429V2.35714C22 1.73199 21.7517 1.13244 21.3096 0.690391C20.8676 0.248341 20.268 0 19.6429 0V0Z"/>
+			</svg>
+
+			<span class="sr-only">分享到facebook</span>
+		</a>
+	{% endif %}
+	{% if 'facebookf' in fields %}
+		<a class="{{btn_cls}}" target="_blank" title="Facebook" href="http://www.facebook.com/sharer.php?u={{ link }}">
+			<i class="bd bd-facebook-f " aria-hidden="true"></i>
+			<span class="sr-only">分享到facebook</span>
+		</a>
+	{% endif %}
+	{# LINKEDIN #}
+	{% if 'linkedin' in fields %}
+		<a class="{{btn_cls}}" target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?url={{ link }}&title={{ title }}">
+			<i class="bd bd-linkedin" aria-hidden="true"></i>
+			<span class="sr-only">分享到linkedin</span>
+		</a>
+	{% endif %}
+	{# TWITTER #}
+	{% if 'twitter' in fields %}
+		<a class="{{btn_cls}}" target="_blank" title="Twitter" href="https://twitter.com/share?url={{ link }}&text={{ title }}">
+
+			<svg class='w-8 fill-current text-light' viewbox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+				<path d="M19.7386 6.519C19.7525 6.71442 19.7525 6.90989 19.7525 7.10531C19.7525 13.0659 15.2157 19.934 6.92386 19.934C4.36928 19.934 1.9962 19.1941 0 17.9099C0.362957 17.9517 0.711906 17.9657 1.08883 17.9657C3.19666 17.9657 5.13704 17.2538 6.68654 16.0393C4.7043 15.9974 3.04313 14.6992 2.47079 12.9124C2.75 12.9543 3.02917 12.9822 3.32234 12.9822C3.72715 12.9822 4.132 12.9263 4.50888 12.8287C2.4429 12.4098 0.893363 10.5951 0.893363 8.40353V8.34771C1.49359 8.68274 2.19162 8.89212 2.93141 8.92001C1.71695 8.11035 0.921293 6.72839 0.921293 5.16493C0.921293 4.32738 1.1446 3.55962 1.53549 2.88956C3.75504 5.6256 7.09135 7.41237 10.8324 7.60783C10.7626 7.2728 10.7207 6.92385 10.7207 6.57486C10.7207 4.09007 12.7309 2.06598 15.2296 2.06598C16.5278 2.06598 17.7004 2.61039 18.524 3.48983C19.543 3.29441 20.5202 2.91749 21.3857 2.40101C21.0506 3.44798 20.3387 4.32742 19.4035 4.88576C20.3109 4.78809 21.1903 4.53677 21.9999 4.18782C21.3858 5.08118 20.618 5.87683 19.7386 6.519V6.519Z"/>
+			</svg>
+		</a>
+	{% endif %}
+	{% if 'pinterest' in fields %}
+		{# PINTEREST #}
+		<a class="{{btn_cls}}" target="_blank" title="Pinterest" href="https://pinterest.com/pin/create/bookmarklet/?media={{ thumbnail }}&url={{ link }}&description={{ title }}">
+			<i class="bd bd-pinterest " aria-hidden="true"></i>
+			<span class="sr-only">分享到pinterest</span>
+		</a>
+	{% endif %}
+</div>

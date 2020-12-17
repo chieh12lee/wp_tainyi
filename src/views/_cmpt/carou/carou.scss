@@ -1,0 +1,136 @@
+.carou {
+	min-height: 400px;
+	// z-index: 1;
+	&.owl-carousel {
+		// z-index: -1;
+	}
+	&.loading {
+		opacity: 0;
+	}
+	&.dark {
+		.owl-dots {
+			> button.owl-dot {
+				> span,
+				&::after {
+					background-color: var(--color-white);
+				}
+			}
+		}
+	}
+
+	&.light {
+		.owl-dots {
+			> button.owl-dot {
+				> span,
+				&::after {
+					background-color: var(--color-dark);
+				}
+			}
+		}
+	}
+
+	//樣式
+	&.--basic {
+		.owl-item {
+			// @import "./item/basic/item.scss";
+		}
+
+		.owl-nav {
+			@apply absolute ml-10 mb-10 bottom-0 left-0;
+		}
+
+		.owl-dots {
+			@apply absolute ml-10 mb-2 mb-10 bottom-0 left-0;
+
+			// display: none;
+		}
+	}
+
+	// height決定
+	&.\--fixed {
+		height: 600px;
+
+		.owl-stage-outer,
+		.owl-stage,
+		.owl-item,
+		.item {
+			height: 100%;
+		}
+	}
+
+	&.\--full {
+		height: 100%;
+
+		.owl-stage-outer,
+		.owl-stage,
+		.owl-item,
+		.item {
+			height: 100%;
+		}
+	}
+	&.\--screen {
+		height: 100vh;
+
+		.owl-stage-outer,
+		.owl-stage,
+		.owl-item,
+		.item {
+			height: 100%;
+		}
+	}
+
+	&.\--auto {
+		min-height: 100px;
+
+		.owl-stage-outer,
+		.item {
+			// min-height: 300px;
+
+			.bg {
+				position: relative;
+				picture {
+					position: relative;
+				}
+				img {
+					object-fit: contain;
+				}
+			}
+		}
+	}
+
+	//animation
+	&.\--slide-left {
+		.item {
+			.title,
+			.subtitle,
+			.link {
+				opacity: 1;
+			}
+		}
+
+		.owl-item {
+			&.active {
+				.item {
+					.title {
+						animation: slideleft 1s normal;
+					}
+
+					.subtitle {
+						animation: slideleft 2s normal;
+					}
+
+					.btn-link {
+						animation: slideleft 1.4s normal;
+					}
+				}
+			}
+		}
+
+		@keyframes slideleft {
+			from {
+				opacity: 0;
+				transform: translateX(50%);
+			}
+		}
+	}
+}

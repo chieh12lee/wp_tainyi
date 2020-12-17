@@ -1,0 +1,38 @@
+<form class="form flex flex-wrap -mx-4">
+	<div class="input-field w-full lg:w-6/12 px-4">
+		<label for="name">
+			{{'姓名' | t }}
+		</label>
+		<input class="form-control" type="text" required name="name"/>
+	</div>
+	<div class="input-field w-full  lg:w-6/12 px-4">
+		<label for="email">
+			{{'Email' | t }}
+		</label>
+		<input class="form-control" type="email" name="email"/>
+	</div>
+	<div class="input-field w-full px-4">
+		<label class="active" for="email">
+			{{'主題' | t }}
+		</label>
+		<select class="browser-default w-full ">
+			<option>
+				{{'類型一' |t }}
+			</option>
+			<option>
+				{{'類型二' |t }}
+			</option>
+		</select>
+	</div>
+	<div class="input-field w-full px-4">
+		<label for="textarea2">
+			{{'訊息' | t }}
+		</label>
+		<textarea class="materialize-textarea" placeholder="{{'請輸入你的問題' | t }}" rows="10" style="height:100px;" name="message"></textarea>
+	</div>
+	<div class="input-actions  w-full px-4">
+		<a class="gee btn btn-block btn-primary w-full" data-gene="click:stdSubmit" data-uri="{{endpoint}}" href="javascript:;">
+			{{'Submit' |t }}
+		</a>
+	</div>
+</form>

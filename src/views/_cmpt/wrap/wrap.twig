@@ -1,0 +1,16 @@
+<div class="wrap {{cls}}">
+	<div class="container {{container}}">
+		<div class="wrap-header">
+			<h2 class="titles title-underline">{{title}}</h2>
+		</div>
+		<div class="wrap-body">
+			{% block body %}body
+			{% endblock %}
+		</div>
+		{% if  actions.more %}
+			<div class="wrap-action text-center ">
+				<a href="{{actions.more}}" title="連結{{title}}列表" class="btn btn-primary">查看更多</a>
+			</div>
+		{% endif %}
+	</div>
+</div>

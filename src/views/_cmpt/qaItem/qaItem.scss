@@ -1,0 +1,28 @@
+.qaWrap {
+	position: relative;
+	.icon {
+		position: absolute;
+		top: 0.75em;
+		right: 0.75em;
+	}
+	.ans {
+		box-sizing: border-box;
+		overflow: hidden;
+		max-height: 0;
+		@apply px-4 duration-300;
+	}
+	&:not(.active) {
+		.minus {
+			display: none;
+		}
+	}
+	&.active {
+		.plus {
+			display: none;
+		}
+		.ans {
+			max-height: 500px;
+			@apply py-4;
+		} 
+	}
+} 

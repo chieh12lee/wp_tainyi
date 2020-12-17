@@ -1,0 +1,144 @@
+// .nav {
+// 	@apply flex relative;
+// 	// overflow-y: auto;
+// 	max-width: 100%;
+// 	&.dark {
+// 	}
+
+// 	&.light {
+// 	}
+
+// 	&.loose {
+// 		> li {
+// 			> a {
+// 				@apply py-3 px-3;
+// 				&::before,
+// 				i {
+// 					display: inline-block;
+// 					margin-right: 2rem;
+// 					width: 1rem;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	&.\--normal {
+// 		max-width: 100%;
+// 		// overflow-x: auto;
+
+// 		> .item,
+// 		> li {
+// 			position: relative;
+
+// 			a {
+// 				@apply px-6 py-4 whitespace-no-wrap;
+// 			}
+
+			
+// 		}
+
+// 		.item:not(.hasChild):hover {
+// 			@apply text-yellow;
+// 		}
+// 	}
+// 	&.\--stacked {
+// 		@apply flex-col mr-0;
+// 	}
+
+// 	> .item,
+// 	> li {
+// 		@apply relative;
+
+// 		> a.link,
+// 		> a {
+// 			@apply block;
+
+// 			&::before,
+// 			i {
+// 				display: inline-block;
+// 				margin-right: 0.5rem;
+// 				width: 1rem;
+// 			}
+// 		}
+// 	}
+
+// 	&.md\:bottom {
+// 		@include media-breakpoint-down(md) {
+// 			z-index: 999;
+// 			@apply flex-row justify-around w-full fixed bottom-0 left-0;
+
+// 			> .item,
+// 			> li {
+// 				flex-grow: 1;
+// 				flex-basis: 0;
+// 				@apply text-center p-0  mr-0 bg-darker text-lighter  border-r border-dark;
+
+// 				&.active,
+// 				.is-active {
+// 					@apply text-white text-center mr-0;
+
+// 					background: #222;
+// 				}
+
+// 				> .link,
+// 				> a {
+// 					@apply h-full text-xs flex flex-col justify-center items-center text-center px-1 py-2;
+
+// 					i,
+// 					&::before {
+// 						@apply mb-1 mr-0;
+
+// 						opacity: 0.8;
+// 					}
+
+// 					span {
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+
+	
+// }
+
+// .hasChild{
+// 	position: relative;
+// 	.dropdown {
+// 		display: none;
+
+// 		a {
+// 			@apply px-4 py-4 whitespace-no-wrap;
+// 			&:hover {
+// 				@apply text-yellow;
+// 			}
+// 		}
+		
+// 	}
+
+// 	@media (max-width: 1023px) {
+// 		&.active {
+// 			> .dropdown {
+// 				display: block;
+// 			}
+// 		}
+// 		&.maintain .dropdown{
+// 			position: absolute;
+// 			top: 100%;
+// 			left: 0; 
+// 		}
+// 	}
+
+// 	@media (min-width: 1024px) {
+// 		.dropdown{
+// 			position: absolute;
+// 			top: 100%;
+// 			left: 0; 
+// 		}
+// 		&:hover {
+// 			> .dropdown {
+// 				display: block;
+				
+// 			}
+// 		}
+// 	}
+// }

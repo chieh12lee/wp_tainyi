@@ -1,0 +1,19 @@
+<div class="wrap py-16">
+	<div class="container px-4 lg:px-4">
+		<div class="wrap-header  mb-10">
+			{% set _title = wrap_title ? wrap_title : '產品資訊' %}
+			<h2 class="wrap-title">{{_title|t}}</h2>
+		</div>
+		{% include "@core/cmpt/grid/grid.twig" with {
+				mode:'normal',
+				fluid:false,
+				gap:4,
+				cols:[4,2,2],
+				rows:product_category,
+				_slot: {
+					thumbnail_size:'square',
+					src:'@cmpt/item/card.product.twig',
+				}
+			}%}
+	</div>
+</div>

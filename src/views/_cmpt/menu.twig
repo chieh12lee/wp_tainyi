@@ -1,0 +1,9 @@
+<ul class="submenu">
+	{% for item in menu %}
+		<li class="item px-3 {{ item.class }}">
+			<a class="link " target="{{item.target}}" href="{{ item.link}}">
+				{{ item.title  }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>

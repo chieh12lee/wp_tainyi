@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!-->
+	<html
+	class="{{site.language_attributes}}"> <!--<![endif]-->
+	<head>
+		{% include '@partial/head.twig' %}
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+	</head>
+	<body class="font-body w-full {% block body_cls %}{% endblock %} bg-gray" style='padding-top:55px'>
+
+		{# {% include "@cmpt/appbar/appbar.twig" %} #}
+		<div class="necker"> {% block necker %}{% endblock %}
+			</div>
+			<div class="bodier {% block bodier_cls %}{% endblock %}">
+				<a href="#C" title="中央內容區塊" id="AC" accesskey="C" class="block h-1 -mb-1 overflow-hidden">:::</a>
+				{% block bodier %}
+					bodier
+				{% endblock %}
+			</div>
+
+			{# {% include '@core/mod/loader/loader.twig' %} #}
+			{# {% include '@partial/footer.twig' %} #}
+
+			{% block append %}{% endblock %}
+			{{ function('wp_footer') }}
+		</body>
+	</html>

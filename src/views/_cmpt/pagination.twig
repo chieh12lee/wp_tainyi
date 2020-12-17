@@ -1,0 +1,45 @@
+<nav
+	class="paginations --{{mode}} {{cls}}" role="navigation" aria-label="pagination">
+
+	{# PAGINATION LIST #}
+	<ul class="pagination">
+
+		{% if row.prev is defined %}
+			<li class="page-item">
+				<a class="page-link" href="{{row.prev.link}}">
+					<i class="icon icon-angle-left"></i>
+				</a>
+			</li>
+		{% endif %}
+
+		{% for page in row.pages %}
+			{% if page.link %}
+				<li class="page-item">
+					<a href="{{ page.link }}" class="{{ page.class }} pagination-link" aria-label="Goto page {{ page.title }}">{{ page.title }}</a>
+				</li>
+			{% else %}
+
+				{% if page.class == 'dots' %}
+					<li class="page-item">
+						<span class="ellipsis">&hellip;</span>
+					</li>
+				{% else %}
+					<li class="page-item active">
+						<a class="page-link" href="{{ page.link }}">{{ page.title }}</a>
+					</li>
+				{% endif %}
+			{% endif %}
+
+		{% endfor %}
+
+
+		{# NEXT BUTTON #}
+		{% if row.next is defined %}
+			<li class="page-item">
+				<a class="page-link" href="{{row.next.link}}">
+					<i class="icon icon-angle-right"></i>
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>

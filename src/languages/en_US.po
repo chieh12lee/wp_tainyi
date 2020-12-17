@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tbs\n"
+"POT-Creation-Date: 2020-10-05 18:29+0800\n"
+"PO-Revision-Date: 2020-10-05 18:29+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: src/views/_cmpt/author.twig:9
+msgid "作者"
+msgstr "Author."
+
+#: src/views/_cmpt/item/carou.wp.twig:18
+msgid "了解更多"
+msgstr "More"
+
+#: src/views/_cmpt/loopbar/loopbar.twig:12
+msgid "全部地區"
+msgstr "Location"
+
+#: src/views/_cmpt/loopbar/loopbar.twig:18
+msgid "全部分類"
+msgstr "All Category"
+
+#: src/views/_cmpt/loopbar/loopbar.twig:25
+msgid "請輸入關鍵字"
+msgstr "Keyword"
+
+#: src/views/_cmpt/loopbar/loopbar.twig:28
+msgid "送出"
+msgstr "Submit"
+
+#: src/views/_partial/footer.twig:9
+msgid "聯絡資訊"
+msgstr "Other Infomation"
+
+#: src/views/_partial/footer.twig:25 src/views/layout/base.twig:102
+msgid "訂閱電子報"
+msgstr "Subscribe"
+
+#: src/views/layout/base.twig:87
+msgid "搜尋"
+msgstr "Search"
+
+#: src/views/layout/base.twig:103
+msgid "歡迎訂閱電子報，請輸入您有效的E-Mail，即可不定時接收最新資訊。"
+msgstr ""
+"Please subscribe to the newsletter, please enter your valid E-Mail, you can "
+"receive the latest information from time to time."
+
+#: src/views/layout/base.twig:105
+msgid "請輸入您的mail信箱"
+msgstr "Please enter your email."
+
+#: src/views/single-partner.twig:22
+msgid "電話"
+msgstr "Tel"
+
+#: src/views/single-partner.twig:26
+msgid "地址"
+msgstr "Address"
+
+#: src/views/single-partner.twig:31 static/_core/cmpt/touch/touch.wp.twig:11
+msgid "Email"
+msgstr ""
+
+#: src/views/single-partner.twig:35
+msgid "網站"
+msgstr "Website"
+
+#: static/_core/cmpt/appBar/_icons.twig:12
+msgid "登入"
+msgstr "Login"
+
+#: static/_core/cmpt/card/card.wp.twig:26
+msgid "特價中"
+msgstr ""
+
+#: static/_core/cmpt/pagination/pagination.wp.twig:10
+#, php-format
+msgid "共 %s 筆"
+msgstr "Total %s"
+
+#: static/_core/cmpt/touch/touch.wp.twig:5
+msgid "姓名"
+msgstr "Name"
+
+#: static/_core/cmpt/touch/touch.wp.twig:17
+msgid "產品相關"
+msgstr "Product-related"
+
+#: static/_core/cmpt/touch/touch.wp.twig:20
+msgid "退貨相關"
+msgstr "Return-related"
+
+#: static/_core/cmpt/touch/touch.wp.twig:24
+msgid "主題"
+msgstr "Topic"
+
+#: static/_core/cmpt/touch/touch.wp.twig:28
+msgid "請輸入你的問題"
+msgstr "Please enter your question"
+
+#: static/_core/cmpt/touch/touch.wp.twig:30
+msgid "訊息"
+msgstr "Message"
+
+#: static/_core/cmpt/touch/touch.wp.twig:35
+msgid "Submit"
+msgstr "Submit"

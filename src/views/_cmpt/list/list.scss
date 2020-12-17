@@ -1,0 +1,24 @@
+.list {
+	.item {
+		@apply block py-2;
+		.date {
+			flex: 0 0 100px;
+		}
+	}
+	.actions {
+		@include media-breakpoint-up(lg) {
+			.btn {
+				~ .btn {
+					@apply ml-1;
+				}
+			}
+		}
+		@include media-breakpoint-down(md) {
+			.btn {
+				~ .btn {
+					@apply mt-1;
+				}
+			}
+		}
+	}
+}

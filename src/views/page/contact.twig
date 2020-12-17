@@ -1,0 +1,161 @@
+{% extends "@layout/base.twig"%}
+{% block necker %}{% endblock %}
+{% block bodierCls %}{% endblock %}
+{% block bodier %}
+	<div class="relative">
+		<form method="post" accept-charset="UTF-8">
+			<div class='border-pink gee' data-gene="init:formSteps" data-index="1" data-color="pink" style='border-right-width:24px'>
+				<div class="py-8 border-b border-light container max-w-screen-sm px-8">
+					<div class="section-title pb-8 border-b border-light text-center">Start a Project</div>
+					<div class="my-8">
+						<div class="text-5xl text-pink font-bold">1</div>
+						<div class="text-3xl font-bold mt-2">Tell us about yourself</div>
+					</div>
+					<div class="field required">
+						<label for="username">Your Name</label>
+						<input id="username " required type="text" name="username">
+					</div>
+					<div class="field required">
+						<label for="company">Company/Title
+						</label>
+						<input id="company " required type="text" name="company">
+					</div>
+					<div class="field required">
+						<label for="industry">Industry</label>
+						<input id="industry" required type="text" name="industry">
+					</div>
+					<div class="field required">
+						<label for="email">Email
+						</label>
+						<input id="email " required type="email" name="email">
+					</div>
+					<div class="field required">
+						<label for="phone">Phone Number</label>
+						<input id="phone " required type="number" name="phone">
+					</div>
+				</div>
+			</div>
+
+			<div class='border-blue gee' data-gene="init:formSteps" data-index="2" data-color="blue" style='border-right-width:24px'>
+				<div class="py-8 border-b border-light container max-w-screen-sm px-8">
+					<div class="mb-8">
+						<div class="text-5xl text-blue font-bold">2</div>
+						<div class="text-3xl font-bold mt-2">How can we collaborate?</div>
+					</div>
+					<div class="radioWrap">
+						<div class="radioItem">
+							<input type="radio" id="collaborate1" name="collaborate" value="Creative Packaging Ideation">
+							<label for="collaborate1">Creative Packaging Ideation
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="collaborate2" name="collaborate" value="Sustainable Packaging Developmen">
+							<label for="collaborate2">Sustainable Packaging Developmen
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="collaborate3" name="collaborate" value="Structural Packaging Engineering & Testing">
+							<label for="collaborate3">Structural Packaging Engineering & Testing
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='border-yellow gee' data-gene="init:formSteps" data-index="3" data-color="yellow" style='border-right-width:24px'>
+				<div class="py-8 border-b border-light container max-w-screen-sm px-8">
+					<div class="mb-8">
+						<div class="text-5xl text-yellow font-bold">3</div>
+						<div class="text-3xl font-bold mt-2">Regional Manufacturing, We can cooperate with you all over the world.</div>
+					</div>
+					<div class="radioWrap">
+						<div class="radioItem">
+							<input type="radio" id="location1" name="location" value="Taiwan">
+							<label for="location1">Taiwan
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="location2" name="location" value="China ">
+							<label for="location2">China
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="location3" name="location" value="Vietnam ">
+							<label for="location3">Vietnam
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="location4" name="location" value="Thailand  ">
+							<label for="location4">Thailand
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="location5" name="location" value="United States  ">
+							<label for="location5">United States
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='pb-14 border-black gee' data-gene="init:formSteps" data-index="4" data-color="black" style='border-right-width:24px'>
+				<div class="py-8 container max-w-screen-sm px-8">
+					<div class="mb-8">
+						<div class="text-5xl  font-bold">4</div>
+						<div class="text-3xl font-bold mt-2">Budget</div>
+					</div>
+					<div class="radioWrap">
+						<div class="radioItem">
+							<input type="radio" id="budget1" name="budget" value="10K-20K">
+							<label for="budget1">10K-20K
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="budget2" name="budget" value="20K-50K  ">
+							<label for="budget2">20K-50K
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="budget3" name="budget" value="50K-100K  ">
+							<label for="budget3">50K-100K
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="budget4" name="budget" value="100K+  ">
+							<label for="budget4">100K+
+							</label>
+						</div>
+						<div class="radioItem">
+							<input type="radio" id="budget5" name="budget" value="Other">
+							<label for="budget5">Other
+							</label>
+						</div>
+						<div class="field">
+							<input id="other_budget" type="text" name="other_budget">
+						</div>
+					</div>
+				</div>
+				<button
+					type="submit" class="gee fudiBtn bg-black border-0 w-64 mx-auto flex" data-nopde="1" data-gene="click:contackSubmit" data-uri="/sender2">
+					{# {{'送出' |t }} #}
+					<div class="txt">
+						SUBMIT
+					</div>
+				</button>
+			</div>
+
+		</form>
+
+
+		<div class="fixed-steps phoneHide">
+			<div class="item">1</div>
+			<div class="step-line "></div>
+			<div class="item">2</div>
+			<div class="step-line"></div>
+			<div class="item">3</div>
+			<div class="step-line"></div>
+			<div class="item">4</div>
+		</div>
+
+	</div>
+{% endblock %}

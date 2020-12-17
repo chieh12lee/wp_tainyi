@@ -1,0 +1,23 @@
+
+.ribbon{
+  position: absolute;
+  overflow: hidden;
+  // z-index: 2;
+  // border: 1px solid red;
+  &.flip{
+    transform: scale(-1,1);
+  }
+
+  .mask{
+    // border: 1px solid #000;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: width,transform;
+    overflow: hidden;
+    svg{
+      will-change: transform;
+    }
+  }
+}

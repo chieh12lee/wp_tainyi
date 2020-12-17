@@ -1,0 +1,11 @@
+{% include '@core/cmpt/pagination/pagination.wp.twig' with { 
+	cls:'px-4', 
+	row:row,
+	mode:'stacked',
+	ranges:{
+		start:(row.current - 1) * row.per +1,
+		end: min((row.current ) * row.per , posts.found_posts ),
+		total:posts.found_posts,
+	} ,
+
+} only %}

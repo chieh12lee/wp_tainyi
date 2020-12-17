@@ -1,0 +1,51 @@
+{
+  "name": "domoidea/chieh",
+  "description": "Awesome WordPress starter theme with own CLI for developers based on modern web technologies.",
+  "keywords": [
+    "webpack",
+    "timber",
+    "wordpress",
+    "composer"
+  ],
+  "type": "wordpress-theme",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Toni Suomalainen",
+      "email": "toni.suomalainen@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "autoload": {
+    "files": [
+      "app/route.php",
+      "app/helpers.php",
+      "src/languages/messages.php"
+    ],
+    "classmap": [
+      "app/timber-extends"
+    ],
+    "psr-4": {
+      "Domo\\Models\\": "app/models/",
+      "Domo\\Utils\\": "app/utils/"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

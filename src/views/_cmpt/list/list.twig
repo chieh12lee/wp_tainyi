@@ -1,0 +1,24 @@
+<div class="list flex flex-col border-t border-lighter">
+	{% for row in rows %}
+		<div class="list-item item flex py-3 border-b border-lighter">
+			{% if 'date' in fields %}
+				<span class="date" style="flex:0 0 120px;">{{row.date}}</span>
+			{% endif %}
+			{% if 'title' in fields %}
+				<a href="{{row.link}}" class="title  flex-grow w-0" title="連結 {{row.title}}">
+					{% if row.new %}
+						<span class="text-red">NEW !
+						</span>
+					{% endif %}
+					{{row.title}}</a>
+			{% endif %}
+			{% if actions is defined %}
+				<span class="actions  lg:ml-2 ml-1 flex lg:flex-row flex-col lg:items-center">
+					{% for action in actions %}
+						<a href="{{action.link}}" class="{{action.cls}} lg:text-base text-xs btn btn-{{action.color}}" {{action.attr}} title="按鈕 {{action.title}}">{{action.title}}</a>
+					{% endfor %}
+				</span>
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>

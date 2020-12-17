@@ -1,0 +1,25 @@
+<div class="necker relative ">
+	<div class="relative necker-inner">
+		<div class="banner relative h-full">
+			<div class="bg">
+				<img src="{{banner.src}}" alt="{{banner.alt}}">
+			</div>
+		</div>
+		<div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
+			<div class="container px-4 ">
+
+				<h1 class="title text-white  font-bold text-center text-4xl text-shadow">
+					{{titles}}
+				</h1>
+
+			</div>
+		</div>
+	</div>
+	{% if breadcrumb and cur != 'about'  and cur != 'home' %}
+		<div class="container mt-8 px-4 lg:px-0">
+			<div class="breadcrumb-bar mb-10 text-xs">
+				{{breadcrumb}}
+			</div>
+		</div>
+	{% endif %}
+</div>

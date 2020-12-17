@@ -1,0 +1,30 @@
+.wrap {
+	@apply py-20;
+	.wrap-header {
+		.titles {
+			@apply mb-20;
+			// @extend .title-underline;
+		}
+		.date {
+			@apply text-center text-xl text-white;
+		}
+	}
+	.wrap-action {
+		@apply mt-20;
+	}
+	@include media-breakpoint-down(md) {
+		@apply py-10;
+		.wrap-header {
+			.titles {
+				@apply mb-10;
+				font-size: 1.8rem;
+			}
+			.date {
+				@apply text-base;
+			}
+		}
+		.wrap-action {
+			@apply mt-10;
+		}
+	}
+}

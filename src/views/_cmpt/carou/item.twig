@@ -1,0 +1,14 @@
+<div class="item">
+	<div class="bg z-0">
+		{% if lazy == true %}
+			<picture>
+				{% if row.mobile %}
+					<source class="owl-lazy" media="(max-width: 650px)" data-srcset="{{row.mobile}}">
+				{% endif %}
+				<img class="owl-lazy" data-src="{{row.thumbnail.src}} " alt="{{row.title|striptags }}">
+			</picture>
+		{% else %}
+			<img src="{{row.thumbnail.src}}" alt="{{row.title|striptags}}">
+		{% endif %}
+	</div>
+</div>

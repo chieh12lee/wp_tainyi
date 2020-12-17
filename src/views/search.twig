@@ -1,0 +1,48 @@
+{% extends "@layout/base.twig"%}
+{% block necker %}
+	{% include '@partial/necker.twig' with { 
+			banner_src:	banner.src,
+			titles:titles
+		} 
+	 %}
+{% endblock %}
+{% block bodierCls %}my-20
+{% endblock %}
+{% block bodier %}
+	<div class="container px-4">
+		{% if posts is not empty %}
+			<div class="flex ">
+				<div class="w-full flex-glow">
+					<h1>{{titles}}</h1>
+					{% include "@core/cmpt/grid/grid.twig" with {
+					mode:'normal',
+					fluid:true,
+					gap:4,
+					cols:[4,2,1],
+					rows:posts,
+					_slot: {
+						src:'@core/cmpt/card/card.wp.twig',
+						thumbnail_size:'thumbnail-64',
+						cls:'',
+						mode:'normal',
+						preview_text:'了解更多<i class="icon icon-arrow-right"></i>',
+						preview_length:5,
+						fields:['title','date','thumbnail'],
+					}
+                    }%}
+
+					{% if pagination.total > 1 %}
+						{% include "@partial/pagination.twig" with { row:pagination}  %}
+					{% endif %}
+				</div>
+			</div>
+
+		{% else %}
+			<div class="flex ">
+				<p class="font-bold text-center">
+					{{ messages.search.no_results }}
+				</p>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
