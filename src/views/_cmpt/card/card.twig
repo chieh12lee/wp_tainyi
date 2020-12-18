@@ -1,4 +1,4 @@
-<div class="relative h-full pb-4 flex flex-col hasTBtn">
+<div class="relative h-full pb-4 flex flex-col hasTBtn {{(class)?class}}">
 	<div class='{{ (type == 'row')? 'w-full lg:w-1/2'}}'>
 		<div class="pic overflow-hidden pb-2/3 relative">
 			<img class='w-full h-full absolute object-cover' src="{{ item.thumbnail.src | assets}}" alt="">

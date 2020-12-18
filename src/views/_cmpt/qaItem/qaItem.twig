@@ -1,4 +1,4 @@
-<div class="qaWrap mb-3 {% if loop.first %}active{% endif %} gee" data-gene="click:onQaClick">
+<div class="qaWrap mb-3 {% if loop.first %}active{% endif %} gee {{(cls) ? cls }}" data-gene="click:onQaClick">
 	<div class="p-4 flex cursor-pointer" style="background-color:#E5E5E5;">
 		<div class="text-primary mr-2">Q{{loop.index}}.</div>
 		<div>{{item.question}}</div>

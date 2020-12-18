@@ -77,9 +77,9 @@
 
 
 			<div class="innerContainer flex-grow">
-				<div class="flex flex-wrap justify-between">
+				<div class="flex flex-wrap justify-between ani-stagger">
 					{% for item in products %}
-						{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/3 mb-4'} %}
+						{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/3 mb-4 ani-item'} %}
 					{% endfor %}
 
 					<div class="space w-1/3"></div>

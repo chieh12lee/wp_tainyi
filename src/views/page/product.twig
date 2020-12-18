@@ -87,9 +87,9 @@
 		}] %}
 
 
-		<div class="flex justify-between mt-16 md:flex-wrap">
+		<div class="flex justify-between mt-16 md:flex-wrap ani-stagger">
 			{% for item in recommends %}
-				{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/4 mb-4 md:w-1/2'} %}
+				{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/4 mb-4 md:w-1/2 ani-item'} %}
 			{% endfor %}
 		</div>
 	</div>

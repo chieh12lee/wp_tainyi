@@ -169,5 +169,37 @@ export default {
 				slider.slick('slickPrev')
 			})
 		})
+
+		gee.hook('initAnimation',me=>{
+
+
+			me.find('.ani-f-b').each((index,el)=>{
+				gsap.from($(el),{
+					duration: .8,
+					y: '+100',
+					opacity: 0,
+					scrollTrigger: {
+						trigger: el,
+						start: 'top bottom-=200', // when the top of the trigger hits the top of the viewport
+						// markers: true,
+					}
+				})
+			})
+
+			me.find('.ani-stagger').each((index,el)=>{
+				gsap.from($(el).find('.ani-item'),{
+					stagger: 0.1,
+					duration: .8,
+					y: '+100',
+					opacity: 0,
+					scrollTrigger: {
+						trigger: el,
+						start: 'top bottom-=200', // when the top of the trigger hits the top of the viewport
+						// markers: true,
+					}
+				})
+			})
+			
+		})
 	},
 }

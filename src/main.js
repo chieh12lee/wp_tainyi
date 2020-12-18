@@ -23,7 +23,6 @@ if (app.platform === 'IOS' && app.screen === 'mobile') {
 	})
 }
 
-import '@cmpt/steps/steps.js'
 import '@cmpt/wrap/wrap.js'
 import '@cmpt/banner/banner.js'
 import '@cmpt/list/list.js'
@@ -31,7 +30,6 @@ import '@cmpt/carou/carou.js'
 import '@cmpt/appbar/appbar.js'
 import '@cmpt/share/share.js'
 import '@cmpt/touch/touch.js'
-import '@cmpt/ribbon/ribbon.js'
 import '@cmpt/qaItem/qaItem.js'
 
 import custom from '@/assets/script.js'

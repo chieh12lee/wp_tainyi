@@ -35,9 +35,9 @@
 
 		<div class="bg-repeat mt-8 mb-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
 
-		<section class="mt-8">
+		<section class="mt-8 ani-stagger">
 			{% for item in qa %}
-				{% include "@cmpt/qaItem/qaItem.twig" with {item: item}%}
+				{% include "@cmpt/qaItem/qaItem.twig" with {item: item,cls: "ani-item"}%}
 			{% endfor %}
 		</section>
 	</div>
