@@ -10,9 +10,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="font-body w-full {% block body_cls %}{% endblock %} bg-gray" style='padding-top:55px'>
+	<body class="font-body w-full {% block body_cls %}{% endblock %} " style='padding-top:75px' >
 
-		{# {% include "@cmpt/appbar/appbar.twig" %} #}
+		{% include "@cmpt/appbar/appbar.twig" %}
 		<div class="necker"> {% block necker %}{% endblock %}
 			</div>
 			<div class="bodier {% block bodier_cls %}{% endblock %}">
@@ -23,7 +23,7 @@
 			</div>
 
 			{# {% include '@core/mod/loader/loader.twig' %} #}
-			{# {% include '@partial/footer.twig' %} #}
+			{% include '@partial/footer.twig' %}
 
 			{% block append %}{% endblock %}
 			{{ function('wp_footer') }}

@@ -47,6 +47,7 @@ module.exports = {
 			darker: 'var(--color-darker)',
 			primary: 'var(--color-primary)',
 			secondary: 'var(--color-secondary)',
+			gray: 'var(--color-gray)',
 		},
 		linearGradientColors: {
 			// defaults to {}

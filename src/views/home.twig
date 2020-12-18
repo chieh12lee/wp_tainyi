@@ -5,12 +5,10 @@
 {% block necker %}
 
 	{% set home_banners = [{
-		title: '高顏質 新世袋',
 		thumbnail: {
 			src: 'images/d/index_header1.jpg',
 		}
 	},{
-		title: '高顏質 新世袋2',
 		thumbnail: {
 			src: 'images/d/index_header1.jpg',
 		}
@@ -23,9 +21,9 @@
 {% endblock %}
 {% block bodier %}
 	<div
-		class="container py-16">
+		class="container py-8">
 		{# 四大服務內容 #}
-		<div class="picTxtContainer space-y-16">
+		<div class="picTxtContainer space-y-16 md:space-y-4">
 			<div class="picTxtWrap">
 				<div class="pic">
 					<img src='{{"images/d/index_img01.png"|assets}}' alt="">
@@ -115,7 +113,7 @@
 			preview: '客戶為了多要提袋，會多買幾件免稅品，對業績很有幫助。',
 		}] %}
 
-		<div class="bg-repeat my-16" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
+		<div class="bg-repeat my-16 md:my-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
 
 		<div class="s-title py-8  text-center mt-14">
 			<h1>來自客戶真實回饋</h1>

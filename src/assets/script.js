@@ -150,5 +150,24 @@ export default {
 				easing: 'linear',
 			})
 		})
+
+
+		gee.hook('slider-product', me => {
+			let slider = me.find('.slider').slick({
+				dots: true,
+				autoplay: false,
+				autoplaySpeed: 3000,
+				speed: 800,
+				arrows: false,
+			})
+
+			me.find('.nextBtn').on('click',()=>{
+				slider.slick('slickNext')
+			})
+
+			me.find('.prevBtn').on('click',()=>{
+				slider.slick('slickPrev')
+			})
+		})
 	},
 }

@@ -1,6 +1,6 @@
-<div class="bg-black py-10">
-	<div class="container text-white px-6 max-w-screen-lg">
-		<div class=" flex justify-between border-b border-light py-4 flex-wrap">
+<div class="py-10 bg-lightest">
+	<div class="container text-light">
+		<div class=" flex justify-between py-4 flex-wrap md:flex-col">
 			{% for item in footer_menu %}
 				<div class="">
 					<a href="{{item.link}}" class="text-lg font-bold py-2 block hover-yellow">{{item.title}}</a>
@@ -16,31 +16,54 @@
 				</div>
 			{% endfor %}
 		</div>
+	</div>
+</div>
 
-		<div class="flex justify-between py-8 flex-col space-y-4 lg:space-y-0 lg:flex-row border-b border-light">
-			<div>
-				<img src='{{site.logo.normal}}' alt="Logo">
-			</div>
+
+{% set site = {
+	info:{
+		company_name: '天毅企業有限公司',
+		address: '237新北市三峽區隆恩街178-9號',
+		locations:[{
+			title: '國內部',
+			tel: '(+886) 2 2673-1883',
+			email: 'service@tienyih.com',
+			fex: '(+886) 2 2673-5070',
+		},{
+			title: '國外部',
+			tel: '(+886) 2 2672-4698 ext 16',
+			email: 'info@tienyih.com',
+			fex: '(+886) 2 2673-5070',
+		}]
+	}
+} %}
+
+
+<div class="py-10 bg-gray text-white">
+	<div class="container">
+		<div class="flex justify-between md:flex-col md:space-y-4 space-y-0">
+
 			<div class="">
-
 				<p class='font-bold'>{{site.info.company_name}}</p>
 				<p>{{site.info.address}}</p>
 			</div>
-			<div class="">
-				<p class='font-bold'>CONTACT</p>
-				<p>
-					<a class='hover-yellow' href="mailto:{{site.info.email}}">{{site.info.business}}</a>
-				</p>
-				<p>Skype:
-					{{site.info.skype}}</p>
-				<p>t:
-					<a class='hover-yellow' href="tel:{{site.info.tel}}">{{site.info.tel}}</a>
-				</p>
-			</div>
+
+			{% for item in site.info.locations %}
+				<div class="flex items-start">
+					<div class="pb-1 border-b-2 border-white">{{item.title}}</div>
+					<div class="ml-4">
+						<ul class="space-y-2">
+							<li><a class='hover:underline' href="tel:{{item.tel}}"><span class="mr-2">T:</span>{{item.tel}}</a></li>
+							<li><span class="mr-2">F:</span> {{item.fex}}</li>
+							<li><a class='hover:underline' href="mailto:{{item.email}}"><span class="mr-2">E:</span> {{item.email}}</a></li>
+						</ul>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 
-		<div class="py-4 text-right text-gray">
+		{# <div class="py-4 text-right">
 			<a href="/privacy-policy" class=" ">Privacy Policy</a>
-		</div>
+		</div> #}
 	</div>
 </div>

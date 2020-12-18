@@ -7,6 +7,12 @@ html
 	+phone 
 		+ratio(16,9)
 
+.neck-ratio-thin
+	+pc
+		+ratio(980,230)
+	+phone 
+		+ratio(16,9)
+
 .coverBg
 	+coverBg
 
@@ -213,4 +219,79 @@ ul.dotList
 
 .ratio-1-1
 	+ratio(1,1)
+.ratio-bag
+	+ratio(400,480)
 
+
+.formWrap
+	display: flex
+	flex-wrap: wrap
+	.inputWrap
+		border-bottom: 1px solid #000
+		margin-bottom: 2em
+		display: flex
+		align-items: center
+		width: calc(50% - 8px)
+		box-sizing: border-box
+		+phone
+			width: 100%
+		&:nth-child(2n)
+			+pc
+				margin-left: 16px
+			
+		label 
+			margin-right: .75em
+		input 
+			flex-grow: 1
+			padding: 8px
+	.textareaWrap
+		width: 100%
+		border-bottom: 1px solid #000
+		textarea
+			width: 100%
+			height: 100px
+			padding: 8px
+
+
+
+.hasChild
+	position: relative
+	display: none
+	.dropdown 
+		display: none
+		background-color: #fff
+		@apply shadow
+		a 
+			@apply px-4 py-4 whitespace-no-wrap
+
+	@media (max-width: 1023px) 
+		&.active 
+			> .dropdown 
+				display: block
+
+		&.maintain .dropdown
+			position: absolute
+			top: 100%
+			left: 0 
+
+	@media (min-width: 1024px) 
+		.dropdown
+			position: absolute
+			top: 100%
+			left: 0 
+		&:hover 
+			> .dropdown 
+				display: block
+
+.hover-txt:hover
+	+dTime(.3s)
+	@apply text-primary
+.hover-up
+	+dTime(.3s)
+	&:hover
+		transform: translate(0, -4px)
+
+.hover-shadow
+	+dTime
+	&:hover
+		@apply shadow-lg

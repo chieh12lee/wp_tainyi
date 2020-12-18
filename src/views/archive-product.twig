@@ -11,7 +11,7 @@
 
 
 	<div class="container wider">
-		{% include "@cmpt/slider/slider.twig" with {banners:products_terms}%}
+		{% include "@cmpt/slider/slider.twig" with {banners:products_terms,ratio_cls:"neck-ratio-thin"}%}
 	</div>
 {% endblock %}
 
@@ -64,11 +64,11 @@
 		}
 	},] %}
 
-	<div class="container py-16">
-		<div class="flex">
-			<div class="side" style="width:220px">
-				<h3 class="text-xl font-bold">產品分類</h3>
-				<div class="mt-2">
+	<div class="container py-16 md:py-4">
+		<div class="flex md:flex-col">
+			<div class="side w-48 md:w-full" >
+				<h3 class="text-xl font-bold md:text-center">產品分類</h3>
+				<div class="mt-2 md:flex md:justify-around">
 					{% for item in terms %}
 						<a href="{{item.link}}" class="block my-6 hover:underline">{{ item.title}}</a>
 					{% endfor %}
@@ -91,7 +91,7 @@
 
 				{# pagination  #}
 				<div class="mt-8">
-				{% set row = {
+					{% set row = {
 						prev: {
 							link: '#',
 						},
@@ -111,7 +111,7 @@
 							title: '3',
 						},]
 					} %}
-				{% include "@cmpt/pagination/pagination.twig" with {row:row }%}
+					{% include "@cmpt/pagination/pagination.twig" with {row:row }%}
 				</div>
 			</div>
 
@@ -122,17 +122,17 @@
 
 
 	{# <h1 class="section-title mt-12 text-center">
-																SHOWCASE
-															</h1>
-															<p class="text-center max-w-2xl mx-auto mt-2">Open repair of infrarenal aortic aneurysm or dissection, plus repair of associated arterial trauma, following unsuccessful endovascular repair; aorto-bi-iliac prosthesis
-															</p>
-															<div class="py-14">
-																{% for item in posts %}
-																	{% include "@cmpt/showCaseItem/showCaseItem.twig" with { item: item ,index: loop.index}%}
-																{% endfor %}
-															</div> #}
+																	SHOWCASE
+																</h1>
+																<p class="text-center max-w-2xl mx-auto mt-2">Open repair of infrarenal aortic aneurysm or dissection, plus repair of associated arterial trauma, following unsuccessful endovascular repair; aorto-bi-iliac prosthesis
+																</p>
+																<div class="py-14">
+																	{% for item in posts %}
+																		{% include "@cmpt/showCaseItem/showCaseItem.twig" with { item: item ,index: loop.index}%}
+																	{% endfor %}
+																</div> #}
 	{# {% if pagination.total > 1 %}
-															{% include '@cmpt/pagination.twig' with { cls:'px-4', row:pagination} only %}
-														{% endif %} #}
+																{% include '@cmpt/pagination.twig' with { cls:'px-4', row:pagination} only %}
+															{% endif %} #}
 
 {% endblock %}
