@@ -1,15 +1,16 @@
 <div class="relative h-full pb-4 flex flex-col hasTBtn {{(class)?class}}">
 	<div class='{{ (type == 'row')? 'w-full lg:w-1/2'}}'>
 		<div class="pic overflow-hidden pb-2/3 relative">
-			<img class='w-full h-full absolute object-cover' src="{{ item.thumbnail.src | assets}}" alt="">
-			{# <img class='w-full h-full absolute object-cover' src="{{ item.thumbnail.src('thumbnail') }}" alt=""> #}
+			<img
+			class='w-full h-full absolute object-cover' src="{{ item.thumbnail.src('thumbnail')}}" alt="">
+		{# <img class='w-full h-full absolute object-cover' src="{{ item.thumbnail.src('thumbnail') }}" alt=""> #}
 		</div>
 	</div>
 	<div class="pt-4  relative">
 		<p class="text-sm text-lighter">{{item.date}}</p>
 		<h2 class='font-bold text-xl'>{{item.title}}</h2>
 		{# <p class="mt-2">{{ item.preview.length(maxLength).read_more('...')}}</p> #}
-		<p class="mt-2">{{ item.preview}}</p>
+		<p class="mt-2">{{ item.preview.length(10).readmore(false)}}</p>
 		<div class="t-btn inline-block mt-4">了解更多</div>
 	</div>
 	<a href="{{ item.link }}" class="z-20 absolute inset-0"></a>

@@ -4,94 +4,23 @@
 {% endblock %} #}
 {% set cur = 'about' %}
 {% block necker %}
-	{% set home_banners = [{
-		thumbnail: {
-			src: 'images/d/about_banner.jpg',
-		}
-	},{
-		thumbnail: {
-			src: 'images/d/about_banner.jpg',
-		} 
-	}] %}
-
 	<div class="container wider">
-		{% include "@cmpt/slider/slider.twig" with {banners:home_banners}%}
+		{% include "@cmpt/slider/slider.twig" with {banners:page_banners}%}
 	</div>
 {% endblock %}
 {% block bodier %}
 
-	{# {{post.content}} #}
-
-	<div
-		class="container pb-16">
-
-		{# about #}
-		<section>
-			<div class="picTxtWrap2 md:flex-col">
-				<div class="txt pt-8">
-					<div class="relative">
-						<h1 class="s-title">{{'好看  X  好用<br>將品牌袋進人們的生活'|t}}</h1>
-						<img src="{{'images/d/about_t2.png'|assets}}" alt="" class="d-txt dt-about1">
-					</div>
-					<h2 class='text-2xl mt-2'>做出「讓消費者拿到會微笑並願意重複使用」的購物袋。<br>一直是我們努力的價值
-					</h2>
-				</div>
-				<div class="pic ml-4 md:hidden">
-					<img src="{{'images/d/about_img1.png'|assets}}" alt="">
-				</div>
-			</div>
-			<p class="mt-6">天毅企業在台灣成立將近三十年，從自營工廠生產開始，一路到業務、設計、行銷，提供製造與顧問多向整合的專業包裝服務。對我們來說，環保包裝袋不只是一項勢在必行的政策，更是一種消費生態的趨勢，一份改善環境的心意，同時也是品牌進入消費者生活最自然的行動資源。</p>
-			<p class="mt-6">我們秉持專業、誠信與創新,有效率地提供優良的品質與客製化需求，並持續投入印刷與車縫研究，掌握市場趨勢，與我們的客戶一起為品牌注入新意，做出一個個「讓消費者拿著會微笑，並願意重複使用」的購物袋。</p>
-		</section>
-
-		<div class="bg-repeat mt-14 mb-4" style="height:1px;background-image:url({{'images/line.png'|assets}})"></div>
-
-		{# 關於天毅 #}
-		<section>
-			<div class="s-title py-8  text-center mt-8 mb-8 ani-f-b">
-				<h1>關於天毅</h1>
-				<img src="{{'images/d/about_t1.png'|assets}}" alt="" class="d-txt onCenter">
-			</div>
-
-			<div class="picTxtWrap2 items-center space-x-8 my-14 md:flex-col md:space-x-0 ani-f-b">
-				<div class="pic">
-					<img src="{{'images/d/about_num3.png'|assets}}" alt="">
-				</div>
-				<div class="txt px-4 border-primary border-l-8 md:mt-3">
-					<h2 class="text-2xl">創立近30年</h2>
-					<p class="mt-2">天毅企業成立將近30年，市場唯一台灣、大陸均有生產基地的直營工廠，所有生產流程皆經由臺灣品質管控，永續經營下一袋。</p>
-				</div>
-			</div>
-
-			<div class="picTxtWrap2 items-center space-x-8 my-14 flex-row-reverse md:flex-col md:space-x-0 ani-f-b">
-				<div class="pic">
-					<img src="{{'images/d/about_num2.png'|assets}}" alt="">
-				</div>
-				<div class="txt px-4 border-primary border-l-8 md:mt-3">
-					<h2 class="text-2xl">2倍努力：創造好看 X 好用的提袋</h2>
-					<p class="mt-2">對於美的堅持與實用性，持續進化，找出兩者的完美平衡。做出一個個「讓消費者拿著會微笑，並願意重複使用」的購物袋，是天毅一直以來努力的價值。</p>
-				</div>
-			</div>
-
-			<div class="picTxtWrap2 items-center space-x-8 my-14 md:flex-col md:space-x-0 ani-f-b">
-				<div class="pic">
-					<img src="{{'images/d/about_num1.png'|assets}}" alt="">
-				</div>
-				<div class="txt px-4 border-primary border-l-8 md:mt-3">
-					<h2 class="text-2xl">台灣購物袋第一品牌直營工廠</h2>
-					<p class="mt-2">唯有第一品牌才能創造第一品牌，各大龍頭產業指名合作，並攜手成長的合作夥伴關係。</p>
-				</div>
-			</div>
-		</section>
-
-		{# 天毅的客戶 #}
-		<div class="s-title py-8  text-center mt-8 mb-8 ani-f-b">
-			<h1>天毅的客戶</h1>
-			<img src="{{'images/d/about_t2-1.png'|assets}}" alt="" class="d-txt onCenter">
-		</div>
+	{{post.content}}
 
 
-		{% set client = {
+	{# 天毅的客戶 #}
+	<div class="s-title py-8  text-center mt-8 mb-8 ani-f-b">
+		<h1>天毅的客戶</h1>
+		<img src="http://tainyi.domoidea.com/app/uploads/tainyi/about_t2-1.png" alt="" class="d-txt onCenter">
+	</div>
+
+
+	{% set client = {
 			items: [{
 				img: {
 					src: 'images/d/clients1.png',
@@ -130,19 +59,18 @@
 			}]
 		}%}
 
-		<section class='ani-f-b'>
-			<div class="slider gee clientSlider" data-gene="init:slider-clients">
-				{% for key, item in client.items %}
-					{# {% set img =  Image(key) %} #}
-					{% set img =  item.img %}
-					<div class="relative ">
-						<img src="{{ img.src | assets }}" alt="{{ img.alt }}">
-						<div class="roundBg  scale-150 transform"></div>
-					</div>
-				{% endfor %}
-			</div>
-		</section>
+	<section class='ani-f-b'>
+		<div class="slider gee clientSlider" data-gene="init:slider-clients">
+			{% for key, item in clients %}
+				{% set img =  Image(key) %}
+
+				<div class="relative ">
+					<img src="{{ img.src}}" alt="{{ img.alt }}">
+					<div class="roundBg  scale-150 transform"></div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
 
 
-	</div>
-</div>{% endblock %}
+</div></div>{% endblock %}

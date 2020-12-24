@@ -44,7 +44,7 @@ function add_to_context($context)
     $context['footer_menu'] = $footer_menu->items;
     // Add main-sidebar to Timber context object
     // $context['main_sidebar'] =   Timber::get_widgets('main-sidebar');
-    // $context['sidebar'] =   Sidebar::render('');
+
 
 
 

@@ -1,13 +1,13 @@
 <div class="slider gee " data-gene="init:slider">
 	{% for item in banners %}
-	
-		<div class="{{ (ratio_cls)? ratio_cls : "neck-ratio" }} coverBg " style="background-image:url('{{item.thumbnail.src | assets}}')">
-			<div class="inset-0">
-				{% if item.title %}
-					<div class="container h-full flex items-center px-4 justify-center">
-						<h1 class='text-3xl font-bold tracking-widest text-primary'>{{item.title}}</h1>
-					</div>
-				{% endif %}
+
+		<div class="{{ (ratio_cls)? ratio_cls : "neck-ratio" }} coverBg " style="background-image:url('{{item.src}}')">
+			<div
+				class="inset-0">{# {% if item.title %}
+										<div class="container h-full flex items-center px-4 justify-center">
+											<h1 class='text-3xl font-bold tracking-widest text-primary'>{{item.title}}</h1>
+										</div>
+									{% endif %} #}
 			</div>
 		</div>
 	{% endfor %}

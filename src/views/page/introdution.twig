@@ -4,202 +4,9 @@
 {% block necker %}{% endblock %}
 {% block bodier %}
 	<div class="container">
-		<div class="s-title py-8  text-center mt-14">
-			<h1>環保袋介紹</h1>
-			<img src="{{'images/d/intro1.png'|assets}}" alt="" class="d-txt onCenter">
-		</div>
+		{{post.content}}
 
 
-		<section>
-			<div class="flex justify-between mt-4">
-				<div class="">
-					<img src="{{'images/d/intoPic1.png'|assets}}" alt="">
-					<div class="text-2xl text-center mt-2">袋型</div>
-				</div>
-				<div class="">
-					<img src="{{'images/d/intoPic3.png'|assets}}" alt="">
-					<div class="text-2xl text-center mt-2">材質</div>
-				</div>
-				<div class="">
-					<img src="{{'images/d/intoPic2.png'|assets}}" alt="">
-					<div class="text-2xl text-center mt-2">布色</div>
-				</div>
-			</div>
-
-			<div class="flex justify-center mt-8">
-				<a href='/contact' class="t-btn">聯絡專人</a>
-			</div>
-		</section>
-
-		<div  class="bg-repeat my-16" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-
-
-		{# 袋型 #}
-		<section id="bagStyle">
-			<img src="{{'images/d/intoPic1.png'|assets}}" alt="" class="mx-auto w-16">
-			<div class="s-title py-4  text-center ani-f-b">
-				<h1>袋型</h1>
-				<img src="{{'images/d/intro2.png'|assets}}" alt="" class="d-txt onCenter">
-			</div>
-			<div class="bg-repeat mt-8 mb-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/bag1.png'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">包邊袋型</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<p>一般最常見工法，以約0.7公分的邊條車縫，結合袋子的正側面及底部，像是鼎泰豐、Krispy Kreme、JOJO均為此種車法。
-				</p>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/bag2.png'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">內成型</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<p>將車縫位置處理於袋子內側，並可再細分為船型袋及桶型袋，是較為時尚的袋型，像是摩斯漢堡、agnes b.、微熱山丘皆是運用此種成型方式，若數量有一萬以上，也可以機器自動熱壓成型替代手工車縫，降低成本。</p>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/bag3.png'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">內成型反壓線</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<p>將袋子的接合處做內外側雙車縫，適合耐重需求度高之提袋，但成本較高，像是誠品書店、風獅爺購物中心均為此種車法。
-				</p>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/bag4.png'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">束口袋</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<p>一般束口袋最常運用的成型方式為內成型，束口繩位置可選擇開花與否，也可加提繩變成束口提袋，最常拿來做成福袋包裝送禮，依數量之需求可有手工車縫及機器自動熱壓二種方式處理。</p>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-		</section>
-		{# 材質 #}
-		<section id='material'>
-			<img src="{{'images/d/intoPic3.png'|assets}}" alt="" class="mx-auto w-16">
-			<div class="s-title py-4  text-center ani-f-b">
-				<h1>材質</h1>
-				<img src="{{'images/d/intro2.png'|assets}}" alt="" class="d-txt onCenter">
-			</div>
-			<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/cloth1.jpg'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">不織布</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<ul class="dotList">
-					<li>原料爲聚丙烯（PP），無毒、無刺激、質輕、耐用性高</li>
-					<li>以環保為出發，不必砍伐樹木</li>
-					<li>製作成本低廉，可大量生產</li>
-					<li>透過創意設計，量身訂做產品包裝</li>
-					<li>搭配行銷活動，提昇企業形象</li>
-					<li>耐重能力為紙袋之數倍</li>
-					<li>可回收絞碎再製造</li>
-					<li>具防潑水及良好的透氣性</li>
-					<li>SGS檢驗認證，不含重金屬及多溴聯苯等有毒物質</li>
-					<li>厚度從40~120g/㎡都有，但以80g/㎡為最為普遍運用</li>
-					<li>可運用於各式購物袋及束口袋、保溫袋之包裝</li>
-				</ul>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/cloth2.jpg'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">棉帆布</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<ul class="dotList">
-					<li>依照織法，可分為平織、斜紋帆布，另可多種加工，如洗水、過漿、磨毛、防水等處理</li>
-					<li>較薄的單一厚度稱之為胚布，而帆布厚度選擇較多，常見為6~12盎司</li>
-					<li>依厚薄度不同可運用在束口袋及購物提袋</li>
-				</ul>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/cloth3.jpg'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">牛津布</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<ul class="dotList">
-					<li>牛津布起源於英國，以牛津大學命名的布料</li>
-					<li>一種變化平紋或重平組織，可運用製作購物袋或保冰袋</li>
-				</ul>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-
-			<div class="ani-f-b">
-				<div class="flex items-center">
-					<img src="{{'images/d/cloth4.jpg'|assets}}" alt="">
-					<h2 class="ml-8 text-3xl">尼龍布</h2>
-				</div>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-				<ul class="dotList">
-					<li>化學名稱為聚酰胺纖維，是一種人造聚合物、纖維、塑料</li>
-					<li>優點是好折疊、耐磨、平滑，且不易產生靜電、變形、起毛球等，但缺點是不耐熱</li>
-					<li>常見的厚度為70D、210D、420D、840D等</li>
-					<li>常見運用於可收納折疊的購物袋或背袋</li>
-				</ul>
-				<div class="bg-repeat my-8" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-			</div>
-
-
-		</section>
-
-
-		{% set cloths = [{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},{
-			title: '布色Y98',
-			pantone: '#164C',
-			cloth: 'images/d/cloth-Y98.jpg',
-			color: '#ECBB5C',
-		},] %}
 		{# 布色 #}
 		<section id="clothColor" class="">
 			<img src="{{'images/d/intoPic2.png'|assets}}" alt="" class="mx-auto w-16">
@@ -207,13 +14,13 @@
 				<h1>布色</h1>
 				<img src="{{'images/d/intro3.png'|assets}}" alt="" class="d-txt onCenter">
 			</div>
-			<div class="bg-repeat mt-8 mb-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
+			<div class="bg-repeat mt-8 mb-4" style='height:1px;background-image:url(/static/images/line.png)'></div>
 
 			<div class="clothWtap ani-stagger pb-16">
 				{% for item in cloths %}
 					<div class="cloth-item ani-item">
 						<div class="pic" style=" background-color: {{ item.color }}	">
-							<div class="cloth-img" style="background-image:url({{ item.cloth |assets}})"></div>
+							<div class="cloth-img" style="background-image:url({{ item.thumbnail}})"></div>
 						</div>
 						<div class="txt mt-2 text-center">
 							<div class="pantone-txt">
@@ -233,9 +40,6 @@
 				<div class="space"></div>
 				<div class="space"></div>
 			</div>
-
 		</section>
 	</div>
-
-
-</div>{% endblock %}
+{% endblock %}

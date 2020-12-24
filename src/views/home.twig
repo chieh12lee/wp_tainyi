@@ -3,163 +3,59 @@
 {% block bodierCls %}{% endblock %}
 {% block body_append %}{% endblock %}
 {% block necker %}
-
-	{% set home_banners = [{
-		thumbnail: {
-			src: 'images/d/index_header1.jpg',
-		}
-	},{
-		thumbnail: {
-			src: 'images/d/index_header1.jpg',
-		}
-	}] %}
-
 	<div class="container wider">
-		{% include "@cmpt/slider/slider.twig" with {banners:home_banners}%}
+		{% include "@cmpt/slider/slider.twig" with {banners:page_banners}%}
 	</div>
 
 {% endblock %}
 {% block bodier %}
-	<div
-		class="container py-8">
-		{# 四大服務內容 #}
-		<div class="picTxtContainer space-y-16 md:space-y-4  ">
-			<div class="picTxtWrap ani-f-b">
-				<div class="pic">
-					<img src='{{"images/d/index_img01.png"|assets}}' alt="">
-				</div>
-				<div class="txt">
-					<div class="content">
-						<div class="s-title">好看
-							<img src="{{'images/d/index_txt1-1.png'|assets}}" alt="" class="d-txt onLeft">
-						</div>
-						<div class="subTitle">是重複使用的唯一條件</div>
-						<p>好看X好用，有可能嗎？<br>
-							不必選擇，您可以兩個都要。<br>
-							提供專業設計諮詢，<br>
-							打造出願意重複使用的提袋。
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="picTxtWrap ani-f-b">
-				<div class="pic">
-					<img src='{{"images/d/index_img02.png"|assets}}' alt="">
-				</div>
-				<div class="txt">
-					<div class="content">
-						<div class="s-title">創新
-							<img src="{{'images/d/index_txt2.png'|assets}}" alt="" class="d-txt onLeft">
-						</div>
-						<div class="subTitle">從天馬行空到消費者的收藏品</div>
-						<p>創意v.s.預算就像拔河比賽，怎麼妥協？<br>
-							與客戶彼此激盪，讓創意與預算完美契合，<br>
-							真正讓好想法成為好商品。
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="picTxtWrap ani-f-b">
-				<div class="pic">
-					<img src='{{"images/d/index_img03.png"|assets}}' alt="">
-				</div>
-				<div class="txt">
-					<div class="content">
-						<div class="s-title">品質
-							<img src="{{'images/d/index_txt3.png'|assets}}" alt="" class="d-txt onLeft">
-
-						</div>
-						<div class="subTitle">理性驗收 絕不感情用事</div>
-						<p>驗收時產生的不安感，如何安心？<br>
-							在生產中，透過科學儀器檢驗真實數據<br>
-							讓交貨日，只有驚喜，沒有驚訝。
-
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="picTxtWrap ani-f-b">
-				<div class="pic">
-					<img src='{{"images/d/index_img04.png"|assets}}' alt="">
-				</div>
-				<div class="txt">
-					<div class="content">
-						<div class="s-title">服務
-							<img src="{{'images/d/index_txt4.png'|assets}}" alt="" class="d-txt onLeft">
-
-						</div>
-						<div class="subTitle">沒有標準答案 只有最佳解決方案</div>
-						<p>遇到問題，只能有一種答案？<br>
-							不僅有問必答，更為客戶提出舉一反三的方案，<br>
-							這才是真的夥伴關係。
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		{# 客戶回饋 #}
-		{% set feedbacks = [{
-			bag: 'images/d/bag.png',
-			title: '長榮航空',
-			preview: '客戶為了多要提袋，會多買幾件免稅品，對業績很有幫助。',
-		},{
-			bag: 'images/d/bag.png',
-			title: '長榮航空2',
-			preview: '客戶為了多要提袋，會多買幾件免稅品，對業績很有幫助。',
-		},{
-			bag: 'images/d/bag.png',
-			title: '長榮航空3',
-			preview: '客戶為了多要提袋，會多買幾件免稅品，對業績很有幫助。',
-		}] %}
-
-		<div class="bg-repeat my-16 md:my-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
-
-		<div class="s-title py-8  text-center mt-14 ani-f-b">
-			<h1>來自客戶真實回饋</h1>
-			<img src="{{'images/d/feedback_dtxt.png'|assets}}" alt="" class="d-txt onCenter">
-		</div>
-
-		<div class="slider gee pb-8 ani-f-b" data-gene="init:slider-2">
-			{% for item in feedbacks %}
-				<div class="slide">
-					<div class="picTxtWrap flex-row-reverse items-end px-4 ">
-						<div class="pic">
-							<img src='{{item.bag |assets}}' alt="">
-						</div>
-						<div class="txt px-2 ">
-							<div class="content border-l-8 border-primary pl-6">
-								<div class="text-2xl">{{item.title}}</div>
-								<div class="mt-2">{{item.preview}}</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-
-
-		{# change now #}
-		<div class="py-16 mt-16 px-8 coverBg flex justify-between flex-wrap md:justify-center ani-f-b" style='background-image:url({{"images/d/index-banner.jpg"|assets}})'>
-			<div>
-				<img src='{{"images/d/change_now.png"|assets}}' alt="">
-				<div class='text-white mt-8'>1個改變…或許<br>
-					可以促進16%的銷售成長<br>
-					可以讓25%的漲幅變合理<br>
-					可以降低30%的行銷預算<br>
-					更重要的是100%為地球付出行動的心</div>
-			</div>
-			<div class='md:mt-8'>
-				<img src="{{"images/d/c2.png"|assets}}" alt="">
-			</div>
-		</div>
-
-
-		<div class="mt-14 px-8 text-center">
-			<p>請放棄傷害地球又尺寸不合的包材，讓品牌能真正被消費者袋者走!<br>
-				天毅，不只製造商品，更創造價值!</p>
-			<a href='#' class="mt-6 t-btn">了解更多</a>
-		</div>
-
+	{{post.content}}
+	<div class="bg-repeat my-16 md:my-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
+	<div class="s-title py-8  text-center mt-14 ani-f-b">
+		<h1>來自客戶真實回饋</h1>
+		<img src="http://tainyi.domoidea.com/app/uploads/tainyi/feedback_dtxt.png" alt="" class="d-txt onCenter">
 	</div>
-{% endblock %}
+
+	<div class="slider gee pb-8 ani-f-b" data-gene="init:slider-2">
+		{% for item in testimonies %}
+			<div class="slide">
+				<div class="picTxtWrap flex-row-reverse items-end px-4 ">
+					<div class="pic">
+						<img src='{{item.thumbnail.src}}' alt="">
+					</div>
+					<div class="txt px-2 ">
+						<div class="content border-l-8 border-primary pl-6">
+							<div class="text-2xl">{{item.title}}</div>
+							<div class="mt-2">{{item.excerpt}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+	{# change now #}
+	<div class="py-16 mt-16 px-8 coverBg flex justify-between flex-wrap md:justify-center ani-f-b" style="background-image:url('http://tainyi.domoidea.com/app/uploads/tainyi/index-banner.jpg')">
+
+		<div>
+			<img src='http://tainyi.domoidea.com/app/uploads/tainyi/change_now.png' alt="">
+			<div class='text-white mt-8'>1個改變…或許<br>
+				可以促進16%的銷售成長<br>
+				可以讓25%的漲幅變合理<br>
+				可以降低30%的行銷預算<br>
+				更重要的是100%為地球付出行動的心</div>
+		</div>
+		<div class='md:mt-8'>
+			<img src="http://tainyi.domoidea.com/app/uploads/c2.png" alt="">
+		</div>
+	</div>
+
+
+	<div class="mt-14 px-8 text-center">
+		<p>請放棄傷害地球又尺寸不合的包材，讓品牌能真正被消費者袋者走!<br>
+			天毅，不只製造商品，更創造價值!</p>
+		<a href='#' class="mt-6 t-btn">了解更多</a>
+	</div>
+
+</div>{% endblock %}

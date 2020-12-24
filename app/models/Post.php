@@ -53,28 +53,14 @@ class Post extends PostType
         ));
 
 
-        $prefix = 'post_category_';
-        $mb_id = $prefix . 'basic_';
-        $cmb = new_cmb2_box(array(
-            'id' => $mb_id,
-            'title' => esc_html__('Setting', 'cmb2'),
-            'object_types' => array('term'), // post type
-            'taxonomies'       => array('category'),
-        ));
-
-
-        $cmb->add_field(array(
-            'name' => 'Color',
-            'desc' => '',
-            'id' => 'color',
-            'type' => 'select',
-            'options'          => array(
-                'pink' => __('Pink', 'domo'),
-                'yellow'   => __('Yellow', 'domo'),
-                'blue'     => __('Blue', 'domo'),
-                'black'     => __('Black', 'domo'),
-            ),
-        ));
+        // $prefix = 'post_category_';
+        // $mb_id = $prefix . 'basic_';
+        // $cmb = new_cmb2_box(array(
+        //     'id' => $mb_id,
+        //     'title' => esc_html__('Setting', 'cmb2'),
+        //     'object_types' => array('term'), // post type
+        //     'taxonomies'       => array('category'),
+        // ));
     }
 };
 Post::init();

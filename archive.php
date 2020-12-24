@@ -35,19 +35,26 @@ if (is_day()) {
     $root_id = count($root_ids) > 0 ? $root_ids[0] : $term_id;
     $root_term = new Timber\Term($root_id);
 
-    $context['titles'] =  $root_term->name;
 
 
-    $context['terms']  = Timber::get_terms([
-        'taxonomy' => $taxonomy,
-        'child_of' =>  $root_id,
-        'title_li' => '',
-        'echo' => false,
-        'hide_empty' => false,
-        'show_option_none'   => false,
-    ]);
 
+    // $context['terms']  = Timber::get_terms([
+    //     'taxonomy' => $taxonomy,
+    //     'child_of' =>  $root_id,
+    //     'title_li' => '',
+    //     'echo' => false,
+    //     'hide_empty' => false,
+    //     'show_option_none'   => false,
+    // ]);
 
+    $sidebar_args = [
+        'titles' => $root_term->name,
+        'child_of' => $root_term->ID,
+        // 'cls' => 'submenu --stacked',
+        'child_of_fake_tax' =>  true,
+        'hide_empty' =>  true,
+        'tree' => false
+    ];
 
     // 取得
     $args['tax_query'] = ['relation' => 'AND'];
@@ -59,11 +66,24 @@ if (is_day()) {
     );
     array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 
+
+    if ($post_type === 'product') {
+
+        $sidebar_args['titles'] = __('產品分類', 'domo');
+        $sidebar_args['depth'] = 2;
+
+        foreach ($term->banner as $key => $value) {
+            $context['products_banners'][] = new Timber\Image($key);
+        }
+    } else {
+        $sidebar_args['titles'] = '';
+    }
+    $context['titles'] =  $term->name;
+    $context['sidebar'] = Sidebar::render($sidebar_args);
+
+
     $context['posts'] = new Timber\PostQuery($args);
 
-    // foreach ($context['posts']  as $post) {
-    //     md();
-    // }
     $context['pagination'] = Timber::get_pagination(array());
 } elseif (is_post_type_archive()) {
 

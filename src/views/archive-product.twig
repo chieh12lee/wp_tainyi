@@ -1,17 +1,7 @@
 {% extends "@layout/base.twig"%}
 {% block necker %}
-
-
-	{% set products_terms = [{
-		title: '我們的產品',
-		thumbnail: {
-			src: 'images/d/index_header1.jpg',
-		}
-	}] %}
-
-
 	<div class="container wider">
-		{% include "@cmpt/slider/slider.twig" with {banners:products_terms,ratio_cls:"neck-ratio-thin"}%}
+		{% include "@cmpt/slider/slider.twig" with {banners:products_banners,ratio_cls:"neck-ratio-thin"}%}
 	</div>
 {% endblock %}
 
@@ -66,19 +56,22 @@
 
 	<div class="container py-16 md:py-4">
 		<div class="flex md:flex-col">
-			<div class="side w-48 md:w-full" >
-				<h3 class="text-xl font-bold md:text-center">產品分類</h3>
-				<div class="mt-2 md:flex md:justify-around">
-					{% for item in terms %}
-						<a href="{{item.link}}" class="block my-6 hover:underline">{{ item.title}}</a>
-					{% endfor %}
-				</div>
+			<div class="side w-48 md:w-full">
+
+				{{sidebar}}
+				{# <h3 class="text-xl font-bold md:text-center">產品分類</h3>
+																																<div class="mt-2 md:flex md:justify-around">
+																												
+																																	{% for item in terms %}
+																																		<a href="{{item.link}}" class="block my-6 hover:underline">{{ item.title}}</a>
+																																	{% endfor %}
+																																</div> #}
 			</div>
 
 
 			<div class="innerContainer flex-grow">
 				<div class="flex flex-wrap justify-between ani-stagger">
-					{% for item in products %}
+					{% for item in posts %}
 						{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/3 mb-4 ani-item'} %}
 					{% endfor %}
 
@@ -91,48 +84,12 @@
 
 				{# pagination  #}
 				<div class="mt-8">
-					{% set row = {
-						prev: {
-							link: '#',
-						},
-						next: {
-							link: '#',
-						},
-						pages: [{
-							link: '#',
-							class: '',
-							title: '1',
-						},{
-							link: '#',
-							class: '',
-							title: '2', 
-						},{
-							class: '',
-							title: '3',
-						},]
-					} %}
-					{% include "@cmpt/pagination/pagination.twig" with {row:row }%}
+
+					{% include "@cmpt/pagination/pagination.twig" with {row:pagination }%}
 				</div>
 			</div>
-
 
 		</div>
 
 	</div>
-
-
-	{# <h1 class="section-title mt-12 text-center">
-																	SHOWCASE
-																</h1>
-																<p class="text-center max-w-2xl mx-auto mt-2">Open repair of infrarenal aortic aneurysm or dissection, plus repair of associated arterial trauma, following unsuccessful endovascular repair; aorto-bi-iliac prosthesis
-																</p>
-																<div class="py-14">
-																	{% for item in posts %}
-																		{% include "@cmpt/showCaseItem/showCaseItem.twig" with { item: item ,index: loop.index}%}
-																	{% endfor %}
-																</div> #}
-	{# {% if pagination.total > 1 %}
-																{% include '@cmpt/pagination.twig' with { cls:'px-4', row:pagination} only %}
-															{% endif %} #}
-
 {% endblock %}

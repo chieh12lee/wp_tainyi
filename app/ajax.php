@@ -33,15 +33,14 @@ class Ajax_ extends AJAX
         $headers[] = 'Cc: admin <chieh.lee@gmail.com>';
 
         $message = '';
-        $message .= (isset($_POST['username'])) ? 'username:' . "\n" . $_POST['username'] . "\n\n" : '';
-        $message .= (isset($_POST['company'])) ? 'company:' . "\n" . $_POST['company'] . "\n\n" : '';
-        $message .= (isset($_POST['industry'])) ? 'industry:' . "\n" . $_POST['industry'] . "\n\n" : '';
-        $message .= (isset($_POST['email'])) ? 'email:' . "\n" . $_POST['email'] . "\n\n" : '';
-        $message .= (isset($_POST['phone'])) ? 'phone:' . "\n" . $_POST['phone'] . "\n\n" : '';
-        $message .= (isset($_POST['collaborate'])) ? 'username:' . "\n" . $_POST['username'] . "\n\n" : '';
-        $message .= (isset($_POST['location'])) ? 'location:' . "\n" . $_POST['location'] . "\n\n" : '';
-        $message .= (isset($_POST['budget'])) ? 'budget:' . "\n" . $_POST['budget'] . "\n\n" : '';
-        $message .= (isset($_POST['other_budget'])) ? 'other_budget:' . "\n" . $_POST['other_budget'] . "\n\n" : '';
+
+        $message .= (isset($_POST['username'])) ? '姓名:' . "\n" . $_POST['username'] . "\n\n" : '';
+        $message .= (isset($_POST['phone'])) ? '電話:' . "\n" . $_POST['phone'] . "\n\n" : '';
+        $message .= (isset($_POST['company'])) ? '公司:' . "\n" . $_POST['company'] . "\n\n" : '';
+        $message .= (isset($_POST['jobTitle'])) ? '職稱:' . "\n" . $_POST['jobTitle'] . "\n\n" : '';
+        $message .= (isset($_POST['email'])) ? '信箱:' . "\n" . $_POST['email'] . "\n\n" : '';
+        $message .= (isset($_POST['detail'])) ? '專業類型與需求:' . "\n" . $_POST['detail'] . "\n\n" : '';
+
 
 
         $msg = wp_mail($to, $subject, $message, $headers);

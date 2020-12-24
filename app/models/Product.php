@@ -20,21 +20,41 @@ class Product extends PostType
         $pt = new Cpts\PostType(
             [
                 'name' => self::$post_type,
-                'singular' => __('Showcase', 'domo'),
-                'plural' => __('Showcases', 'domo'),
+                'singular' => __('Product', 'domo'),
+                'plural' => __('Product', 'domo'),
                 'slug' => self::$post_type,
 
 
             ],
             [
-                'has_archive' => true,
-                'rewrite' => array('slug' => 'showcase'),
+                'has_archive' => false,
+                // 'rewrite' => array('slug' => 'Product'),
 
                 'supports' => array('title', 'page-attributes', 'thumbnail', 'excerpt'),
             ]
         );
         $pt->register();
         $pt->taxonomy('post_tag');
+
+        $tax_name = self::$post_type . '_category';
+        $tax = new Cpts\Taxonomy(
+            [
+                'name' => $tax_name,
+
+                'singular' => __('Product Category', 'domo'),
+                'plural' => __('Product Categories', 'domo'),
+                'slug' => $tax_name,
+                'hierarchical' => true,
+            ],
+            array(
+                'query_var' => true,
+                // 'rewrite' => array('slug' => 'product'),
+            )
+        );
+        $tax->register();
+
+        //組合
+        $pt->taxonomy($tax_name);
     }
     public static function options($args = array())
     {
@@ -44,7 +64,7 @@ class Product extends PostType
         if (!empty($posts)) {
             foreach ($posts as $post) {
 
-                $options[$post->ID] = $post->post_name;
+                $options[$post->ID] = $post->title;
             };
         }
         return $options;
@@ -60,75 +80,39 @@ class Product extends PostType
             'object_types' => array('product'),
         ));
 
+
         $mb->add_field(array(
-            'name' => 'Color',
+            'name' => 'Gallery',
             'desc' => '',
-            'id' => 'color',
-            'type' => 'select',
-            'options'          => array(
-                'pink' => __('Pink', 'domo'),
-                'yellow'   => __('Yellow', 'domo'),
-                'blue'     => __('Blue', 'domo'),
-                'black'     => __('Black', 'domo'),
-            ),
-
+            'id' => 'gallery',
+            'type' => 'file_list',
 
         ));
+
         $mb->add_field(array(
-            'name' => 'banner',
+            'name' => __('Detail'),
             'desc' => '',
-            'id' => 'banner',
-            'type' => 'file',
-
+            'id' => 'detail',
+            'type' => 'text',
         ));
         $mb->add_field(array(
-            'name' => 'pic_1',
+            'name' => __('Brand'),
             'desc' => '',
-            'id' => 'pic_1',
-            'type' => 'file',
-
+            'id' => 'brand',
+            'type' => 'text',
         ));
         $mb->add_field(array(
-            'name' => 'pic_2',
+            'name' => __('Size'),
             'desc' => '',
-            'id' => 'pic_2',
-            'type' => 'file',
-
+            'id' => 'size',
+            'type' => 'text',
         ));
         $mb->add_field(array(
-            'name' => 'pic_3',
+            'name' => __('Material'),
             'desc' => '',
-            'id' => 'pic_3',
-            'type' => 'file',
-
+            'id' => 'material',
+            'type' => 'text',
         ));
-        $mb->add_field(array(
-            'name' => 'pic_4',
-            'desc' => '',
-            'id' => 'pic_4',
-            'type' => 'file',
-
-        ));
-
-        $mb->add_field(array(
-            'name' => __('Challenges'),
-            'desc' => '標題簡介的下方主要說明',
-            'id' => 'challenges',
-            'type' => 'textarea',
-        ));
-        $mb->add_field(array(
-            'name' => __('Solution'),
-            'desc' => '標題簡介的下方主要說明',
-            'id' => 'solution',
-            'type' => 'textarea',
-        ));
-        $mb->add_field(array(
-            'name' => __('Result'),
-            'desc' => '標題簡介的下方主要說明',
-            'id' => 'result',
-            'type' => 'textarea',
-        ));
-
         $mb->add_field(array(
             'name' => __('Recommends'),
             'id' => 'recommends',
@@ -136,6 +120,23 @@ class Product extends PostType
             'type' => 'pw_multiselect',
             'options' => self::options(),
 
+        ));
+
+
+        $mb_id = $prefix . 'term_';
+        $cmb = new_cmb2_box(array(
+            'id' =>   $mb_id . 'basic',
+            'title' => esc_html__('Setting', 'cmb2'),
+            'object_types' => array('term'), // post type
+            'taxonomies'       => array('product_category'),
+        ));
+        $cmb->add_field(array(
+            'name' => 'Banner',
+            'id' => 'banner',
+            'desc' => '列表頁使用的Gallery',
+            'type' => 'file_list',
+            'preview_size' => array(300, 100), // Default: array( 50, 50 )
+            'query_args' => array('type' => 'image'), // Only images attachment
         ));
     }
 }

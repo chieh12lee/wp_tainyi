@@ -11,7 +11,7 @@ function register_menus()
     register_nav_menu('service', __('Service menu', 'domo'));
 }
 
-add_action('after_setup_theme', __NAMESPACE__ . '\register_menus');
+// add_action('after_setup_theme', __NAMESPACE__ . '\register_menus');
 function register_sidebars()
 {
     $sidebar  = apply_filters('sidebar', [

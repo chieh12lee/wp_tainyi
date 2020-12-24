@@ -1,116 +1,60 @@
 {% extends "@layout/base.twig"%}
+{# {% block append %}
+	{{sidebar}}
+{% endblock %} #}
 {% block necker %}{% endblock %}
-{% block bodierCls %}{% endblock %}
+
+
 {% block bodier %}
-	{# <div class="container max-w-screen-lg pb-14 px-4">
-		<div class="relative py-16 lg:px-16">
-			<h1 class="section-title text-center">{{row.title}}</h1>
-			<p class="text-center max-w-screen-md mx-auto mt-2">{{row.preview.read_more('')}}</p>
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'right-0 top-0 flip mt-4 -mr-16 phoneHide',
-        width: 150,
-        color: row.color,
-        animate: true,
-      }%}
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'right-0 bottom-0 flip mb-4',
-        color: row.color,
-        type: 'small',
-        animate: false,
-      }%}
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'left-0 top-1/2 -ml-16 -mt-16 phoneHide',
-        width: 90,
-        color: row.color,
-        animate: true,
-      }%}
+	<div class="container py-16">
+		<div class="flex md:flex-col">
+			<div class="picWrap w-1/2 md:w-full gee" data-gene="init:slider-product">
+				<div class="slider pb-8 mx-auto mb-0" style="max-width:400px" id="productSlider">
 
-		</div>
+					{% for key,item in row.gallery %}
 
-		<div class="pic gee relative" data-color='{{row.color}}' data-gene="init:aniPic">
-			<img src='{{row.banner}}' alt="{{row.title}}" class='w-full img '>
-		</div>
+						{% set img =  Image(key) %}
 
-		<div class="txtPicWrap min-h-auto mt-8">
-			<div class="txt pr-8 ">
-				<div class="content w-full relative py-14">
-					<h2 class="text-4xl font-bold">{{"Challenges"}}</h2>
-					<p class="mt-1">{{row.challenges}}</p>
-					{% include "@cmpt/ribbon/ribbon.twig" with {
-						class: 'top-0 left-0 flip',
-						color: row.color,
-						type: 'small',
-						animate: false,
-					}%}
+						<div class="slide ratio-bag bg-contain bg-no-repeat bg-center" style="background-image:url({{img.src('thumbnail')}})"></div>
+					{% endfor %}
+				</div>
+				<div class="flex justify-between px-8 mx-auto" style="max-width:400px">
+					<div class="prevBtn cursor-pointer">
+						<img src="{{'images/arrLeft.png'|assets}}" alt="">
+					</div>
+					<div class="nextBtn cursor-pointer">
+						<img src="{{'images/arrRight.png'|assets}}" alt="">
+					</div>
 				</div>
 
 			</div>
-
-			<div class="pic gee relative min-h-0" data-color='{{row.color}}' data-gene="init:aniPic">
-				<img src='{{row.pic_1}}' alt="{{row.title}}" class='w-full img '>
+			<div class="txtWrap w-1/2 md:w-full">
+				<h1 class="text-2xl">{{row.title}}</h1>
+				<div class="border-b border-lighter py-2 my-2">
+					<p class="text-lighter text-sm">描述</p>
+					<p>{{row.detail}}</p>
+				</div>
+				<div class="border-b border-lighter py-2 my-2">
+					<p class="text-lighter text-sm">品牌</p>
+					<p>{{row.brand}}</p>
+				</div>
+				<div class="border-b border-lighter py-2 my-2">
+					<p class="text-lighter text-sm">尺寸</p>
+					<p>{{row.size}}</p>
+				</div>
+				<div class="border-b border-lighter py-2 my-2">
+					<p class="text-lighter text-sm">材質</p>
+					<p>{{row.material}}</p>
+				</div>
+				<a href="/contact" class="t-btn mt-6">聯絡我們</a>
 			</div>
 		</div>
 
-		<div class="relative">
-			<div class="pic gee relative w-4/5 mt-8" data-color='{{row.color}}' data-gene="init:aniPic">
-				<img src='{{row.pic_2}}' alt="{{row.title}}" class='w-full img'>
-			</div>
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'right-0 top-0 -mr-16 mt-12',
-        width: 150,
-        color: row.color,
-        animate: true,
-      }%}
+
+		<div class="flex justify-between mt-16 md:flex-wrap ani-stagger">
+			{% for item in recommends %}
+				{% include "@cmpt/bag.twig" with { item: item ,cls :'w-1/4 mb-4 md:w-1/2 ani-item'} %}
+			{% endfor %}
 		</div>
-
-
-		<div class="flex justify-end relative">
-			<div class="lg:w-1/2 my-12 ml-10">
-				<h2 class="text-4xl font-bold">{{"Solution"}}</h2>
-				<p class="mt-1">{{row.solution}}</p>
-			</div>
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'left-0 top-0 -ml-16 mt-12 flip',
-        width: 100,
-        color: row.color,
-        animate: true,
-      }%}
-		</div>
-
-		<div class="pic gee relative" data-color='{{row.color}}' data-gene="init:aniPic">
-			<img src='{{row.pic_4}}' alt="{{row.title}}" class='w-full img'>
-		</div>
-
-		<div class="flex mt-14 relative">
-			<h2 class="text-4xl font-bold w-2/5 pb-16">{{"Result"}}</h2>
-			<p class="w-3/5 pt-2">{{row.result}}</p>
-			{% include "@cmpt/ribbon/ribbon.twig" with {
-        class: 'left-0 bottom-0 mb-2',
-        color: row.color,
-        type: 'small',
-      }%}
-		</div>
-
-
-	</div> #}
-
-{# 
-	{% for item in recommends %}
-		{% include "@cmpt/productBtn/productBtn.twig" with  {item:item} %}
-	{% endfor %}
-
-	{% if  prev.link %}
-
-
-		<div class="fixed z-40 top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 hover:translate-x-0 duration-500">
-			<a href="{{ prev.link }}" class="inset-0 absolute z-10"></a>
-			<img src="{{'images/prevBtn.png' | assets}}" alt="">
-		</div>
-	{% endif %}
-	{% if  next.link %}
-		<div class="fixed z-40 top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 hover:translate-x-0 duration-500">
-			<a href="{{ next.link }}" class="inset-0 absolute z-10"></a>
-			<img src="{{'images/nextBtn.png' | assets}}" alt="">
-		</div>
-	{% endif %} #}
+	</div>
 {% endblock %}

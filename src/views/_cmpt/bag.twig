@@ -1,6 +1,5 @@
-
 <div class="bag relative {% if cls %}{{cls}}{% endif %} py-3 hover-shadow">
-	<div class="pic ratio-bag bg-contain bg-center bg-no-repeat w-full" style="background-image:url({{ item.thumbnail.src |assets}})"></div>
+	<div class="pic ratio-bag bg-contain bg-center bg-no-repeat w-full" style="background-image:url({{ item.thumbnail.src('thumbnail') }})"></div>
 	<h3 class="mt-3 text-center">{{ item.title }}</h3>
 	<a href="#" class="inset-0 absolute z-2"></a>
-</div>  
+</div>

@@ -1,0 +1,9 @@
+{% extends "@layout/base.twig"%}
+{% block necker %}
+	<div class="container wider">
+		{% include "@cmpt/slider/slider.twig" with {banners:page_banners}%}
+	</div>
+{% endblock %}
+{% block bodier %}
+	{{post.content}}
+{% endblock %}

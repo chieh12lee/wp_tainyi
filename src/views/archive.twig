@@ -6,49 +6,16 @@
 	<div class="container pb-16">
 		<div class="s-title py-8  text-center">
 			<h1>最新消息</h1>
-			<img src="{{'images/d/news_dt1.png'|assets}}" alt="" class="d-txt onCenter">
+			<img src="http://tainyi.domoidea.com/app/uploads/tainyi/news_dt1.png" alt="" class="d-txt onCenter">
 		</div>
 
 		<div class="flex mt-4 justify-center space-x-6">
-			{% for item in terms %}
-				<a href="{{item.link}}" class="t-btn">{{ item.title}}</a>
-			{% endfor %}
+			{{sidebar}}
+			{# {% for item in terms %}
+							<a href="{{item.link}}" class="t-btn">{{ item.title}}</a>
+						{% endfor %} #}
 		</div>
 
-		{# posts #}
-		{% set posts = [{
-			date: '2020/12/01',
-			title: '2020 FOOD TAIPEI系列展延期至12月',
-			preview: '原訂今年6月17日至20日舉辦的FOOD TAIPEI系列展，受到新冠肺炎(COVID-19)疫情.....',
-			link: '#',
-			thumbnail:{
-				src: 'images/d/news_demo.jpg',
-			}
-		},{
-			date: '2020/12/01',
-			title: '2020 FOOD TAIPEI系列展延期至12月',
-			preview: '原訂今年6月17日至20日舉辦的FOOD TAIPEI系列展，受到新冠肺炎(COVID-19)疫情.....',
-			link: '#',
-			thumbnail:{
-				src: 'images/d/news_demo.jpg',
-			}
-		},{
-			date: '2020/12/01',
-			title: '2020 FOOD TAIPEI系列展延期至12月',
-			preview: '原訂今年6月17日至20日舉辦的FOOD TAIPEI系列展，受到新冠肺炎(COVID-19)疫情.....',
-			link: '#',
-			thumbnail:{
-				src: 'images/d/news_demo.jpg',
-			}
-		},{
-			date: '2020/12/01',
-			title: '2020 FOOD TAIPEI系列展延期至12月',
-			preview: '原訂今年6月17日至20日舉辦的FOOD TAIPEI系列展，受到新冠肺炎(COVID-19)疫情.....',
-			link: '#',
-			thumbnail:{
-				src: 'images/d/news_demo.jpg',
-			}
-		}] %}
 
 		<div class="flex flex-wrap mt-16 ani-stagger">
 			{% for item in posts %}
@@ -63,27 +30,7 @@
 			{% endfor %}
 		</div>
 
-		{# pagination  #}
-		{% set row = {
-			prev: {
-				link: '#',
-			},
-			next: {
-				link: '#',
-			},
-			pages: [{
-				link: '#',
-				class: '',
-				title: '1',
-			},{
-				link: '#',
-				class: '',
-				title: '2', 
-			},{
-				class: '',
-				title: '3',
-			},]
-		} %}
-		{% include "@cmpt/pagination/pagination.twig" with {row:row }%}
+
+		{% include "@cmpt/pagination/pagination.twig" with {row:pagination }%}
 	</div>
 {% endblock %}

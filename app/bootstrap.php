@@ -10,7 +10,7 @@ require_once __DIR__ . '/../app/config/autoload.php';
 require_once __DIR__ . '/../app/shortcode.php';
 require_once __DIR__ . '/migrate.php';
 require_once __DIR__ . '/ajax.php';
-require_once __DIR__ . '/exts/tinymice/tinymice.php';
+// require_once __DIR__ . '/exts/tinymice/tinymice.php';
 require_once __DIR__ . '/exts/post-gallery/post-gallery.php';
 // Init Sessions
 Session::init();
@@ -18,17 +18,14 @@ Session::init();
 // Init posttypes
 
 Models\Page::init();
-// Models\User::init();
 
-// Models\Ads::init();
-Models\Banner::init();
-// Models\Faq::init();
+// Models\Banner::init();
+Models\Faq::init();
 Models\Block::init();
 Models\Product::init();
-// Models\Publication::init();
+Models\Slip::init();
 Models\Post::init();
-Models\Company::init();
-// Models\Partner::init();
+// Models\Company::init();
 Models\Site::get_instance();
 
 // // remove_filter('the_content', 'wpautop');
@@ -110,3 +107,33 @@ function bodhi_svgs_allow_svg_upload($data, $file, $filename, $mimes)
     ];
 }
 add_filter('wp_check_filetype_and_ext', 'bodhi_svgs_allow_svg_upload', 10, 4);
+/**
+ * Removes metabox from appearing on post new screens before the post
+ * ID has been set.
+ *
+ * @author Thomas Griffin
+ *
+ * @param bool $display
+ * @param array $meta_box The array of metabox options
+ * @return bool $display True on success, false on failure
+ */
+function tgm_exclude_from_new($display, $meta_box)
+{
+
+    if (!isset($meta_box['show_on']['alt_key'], $meta_box['show_on']['alt_value'])) {
+        return $display;
+    }
+
+    global $pagenow;
+
+    // Force to be an array
+    $to_exclude = !is_array($meta_box['show_on']['alt_value'])
+        ? array($meta_box['show_on']['alt_value'])
+        : $meta_box['show_on']['alt_value'];
+
+    $is_new_post = 'post-new.php' == $pagenow && in_array('post-new.php', $to_exclude);
+
+
+    return !$is_new_post;
+}
+add_filter('cmb2_show_on', 'tgm_exclude_from_new', 10, 2);

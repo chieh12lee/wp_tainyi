@@ -1,0 +1,26 @@
+{% extends "@layout/base.twig"%}
+{# {% block append %}
+	{{sidebar}}
+{% endblock %} #}
+{% set cur = 'qa' %}
+{% block necker %}{% endblock %}
+{% block bodier %}
+
+	{# {{post.content}} #}
+
+
+	<div class="container pb-16">
+		<div class="s-title py-4  text-center">
+			<h1>常見問題</h1>
+			<img src="{{'images/d/qa-dt.png'|assets}}" alt="" class="d-txt onCenter">
+		</div>
+
+		<div class="bg-repeat mt-8 mb-4" style='height:1px;background-image:url({{"images/line.png"|assets}})'></div>
+
+		<section class="mt-8 ani-stagger">
+			{% for item in posts %}
+				{% include "@cmpt/qaItem/qaItem.twig" with {item: item,cls: "ani-item"}%}
+			{% endfor %}
+		</section>
+	</div>
+</div>{% endblock %}
